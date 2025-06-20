@@ -8,5 +8,4 @@
 
 ## Dowload and Install
 
-> [!CAUTION]
-> No download is currently available. But in the future, you will be able to download the latest release from the [Releases](https://github.com/Iron-Sparrow/PGAA/releases) or by using pip.
+ ```python -m pip install pgaa``` or check out the [releases](https://github.com/Iron-Sparrow/PGAA/releases).
