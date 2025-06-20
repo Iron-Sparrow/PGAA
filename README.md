@@ -11,3 +11,20 @@
 ## Dowload and Install
 
  ```python -m pip install pgaa``` or check out the [releases](https://github.com/Iron-Sparrow/PGAA/releases).
+
+## Usage
+
+To use the anti-aliasing features, you need to import the package:
+
+```
+import PGAA
+```
+
+or if you want to use a specific form of anti-aliasing, ie Super-Sampling:
+
+```
+import PGAA.SuperSampling as SSA
+```
+```
+from PGAA.SuperSampling import *
+```
