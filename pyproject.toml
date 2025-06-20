@@ -1,10 +1,15 @@
 [build-system]
-requires = ["flit_core >3.2, <4"]
+requires = ["flit_core >=3.12, <4"]
 build-backend = "flit_core.buildapi"
 
 [project]
 dynamic = ["version"]
 name = "PGAA"
+authors = [
+    { name = "Adam Kudelas", email = "adam.kudelas.pro@gmail.com"}
+]
+
+description = "PGAA (Pygame-CE Anti-Aliasing) is a Python3 library that provides anti-aliasing for Pygame-CE sufaces."
 
 readme = "README.md"
 classifiers = [
@@ -19,7 +24,7 @@ classifiers = [
 ]
 requires-python = ">=3.9"
 dependencies = [
-    "pygame-ce >=2.4, <3"
+    "pygame-ce >=2.4.0, <3"
 ]
 license = "IronSparrow License - June 2025 - License Version 1 (revision 3)"
 license-files = ["LICEN[CS]E*"]
