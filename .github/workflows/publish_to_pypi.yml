@@ -26,7 +26,7 @@ jobs:
       - name: Extract version from __init__.py
         id: get_version
         run: |
-          VERSION=$(python -c "import ast; print(ast.literal_eval(ast.parse(open('src/PGAA/__init__.py').read()).body[1].value.value))")
+          VERSION=$(python -c "import re; content=open('src/PGAA/__init__.py').read(); print(re.search(r\"__version__\\s*=\\s*['\\\"]([^'\\\"]+)['\\\"]\", content).group(1))")
           echo "version=$VERSION" >> $GITHUB_OUTPUT
           echo "Extracted version: $VERSION"
 
@@ -51,15 +51,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          persist-credentials: true
-          token: ${{ secrets.GITHUB_TOKEN }}
+          persist-credentials: false
 
       - name: Create and push tag
+        env:
+          PAT: ${{ secrets.GH_PAT }}
         run: |
           VERSION=${{ needs.check-version.outputs.version }}
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
           git tag -a "v$VERSION" -m "Release v$VERSION"
+          git remote set-url origin https://x-access-token:${PAT}@github.com/Iron-Sparrow/PGAA.git
           git push origin "v$VERSION"
 
   build:
