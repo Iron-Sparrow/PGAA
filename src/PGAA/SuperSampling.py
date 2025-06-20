@@ -85,3 +85,23 @@ def aa4_hq(surf: pg.Surface) -> pg.Surface:
     """
     assert isinstance(surf, pg.Surface)
     return pg.transform.smoothscale_by(pg.transform.smoothscale_by(surf, 4), 0.25)
+
+def aa8(surf: pg.Surface) -> pg.Surface:
+    """
+    Applies SSAA 8x to the given surface and returns a new surface of the same size.
+    Uses the default scaling algorithm for better performance.
+    :param surf :pygame.Surface: The surface to apply SSAA to.
+    :return: pygame.Surface: A new surface with SSAA applied.
+    """
+    assert isinstance(surf, pg.Surface)
+    return pg.transform.scale_by(pg.transform.scale_by(surf, 8), 0.125)
+
+def aa8_hq(surf: pg.Surface) -> pg.Surface:
+    """
+    Applies SSAA 8x to the given surface and returns a new surface of the same size.
+    Uses the smoothed scaling algorithm for better quality.
+    :param surf :pygame.Surface: The surface to apply SSAA to.
+    :return: pygame.Surface: A new surface with SSAA applied.
+    """
+    assert isinstance(surf, pg.Surface)
+    return pg.transform.smoothscale_by(pg.transform.smoothscale_by(surf, 8), 0.125)
