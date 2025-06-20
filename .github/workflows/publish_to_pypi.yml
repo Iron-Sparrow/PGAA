@@ -40,7 +40,6 @@ jobs:
       name: pypi
       url: https://pypi.org/p/PGAA # Replace <package-name> with your PyPI project name
     permissions:
-      id-token: write  # IMPORTANT: mandatory for trusted publishing
       contents: read
     steps:
       - name: Download all the dists
@@ -48,5 +47,13 @@ jobs:
         with:
           name: python-package-distributions
           path: dist/
-      - name: Publish distribution 📦 to PyPI
-        uses: pypa/gh-action-pypi-publish@release/v1
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Install Flit
+        run: python3 -m pip install flit --user
+      - name: Publish distribution 📦 to PyPI using Flit
+        env:
+          FLIT_PASSWORD: ${{ secrets.PYPI_TOKEN }}
+        run: python3 -m flit publish --dist-dir dist
