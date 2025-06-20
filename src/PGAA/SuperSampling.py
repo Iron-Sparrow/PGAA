@@ -90,6 +90,9 @@ def aa8(surf: pg.Surface) -> pg.Surface:
     """
     Applies SSAA 8x to the given surface and returns a new surface of the same size.
     Uses the default scaling algorithm for better performance.
+
+    It is not recommended to use this function due to the performance impact.
+
     :param surf :pygame.Surface: The surface to apply SSAA to.
     :return: pygame.Surface: A new surface with SSAA applied.
     """
@@ -100,6 +103,9 @@ def aa8_hq(surf: pg.Surface) -> pg.Surface:
     """
     Applies SSAA 8x to the given surface and returns a new surface of the same size.
     Uses the smoothed scaling algorithm for better quality.
+
+    It is not recommended to use this function due to the performance impact.
+
     :param surf :pygame.Surface: The surface to apply SSAA to.
     :return: pygame.Surface: A new surface with SSAA applied.
     """
