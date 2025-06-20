@@ -1,5 +1,5 @@
 """
-SuperSampling class for applying various forms of Super Sampling Anti-Aliasing (SSAA) to surfaces.
+Functions for applying various forms of Super Sampling Anti-Aliasing (SSAA) to surfaces.
 Due to the nature of SSAA, it is expected that the performances will be lower than without any form of anti-aliasing.
 
 Note: This class is designed to work with Pygame-CE (Pygame Community Edition) and isn't compatible with other versions of Pygame.
