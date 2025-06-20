@@ -21,7 +21,7 @@ requires-python = ">=3.9"
 dependencies = [
     "pygame-ce >=2.4, <3"
 ]
-license = "MIT"
+license = "IronSparrow License - June 2025 - License Version 1 (revision 3)"
 license-files = ["LICEN[CS]E*"]
 
 [project.urls]
