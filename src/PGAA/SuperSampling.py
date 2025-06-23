@@ -207,7 +207,7 @@ def ssaa(
             )
         return pg.transform.scale_by(pg.transform.scale_by(surf, factor), 1 / factor)
 
-    #If somehow, the code doesn't return anything, we return the original surface.
+    # If somehow, the code doesn't return anything, we return the original surface.
     return surf
 
 
