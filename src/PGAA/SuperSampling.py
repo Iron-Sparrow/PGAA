@@ -9,13 +9,14 @@ Currently only SSAA0.5x, SSAA2x, and SSAA4x are implemented.
 """
 
 import pygame as pg
+from typing import Union
 
 assert getattr(pg, "IS_CE", False), (
     "This module is designed to work with Pygame-CE (Pygame Community Edition) only."
 )
 
 
-def aa05(surf: pg.Surface) -> pg.Surface:
+def ssaa05(surf: pg.Surface) -> pg.Surface:
     """
     Applies SSAA 0.5x to the given surface and returns a new surface of the same size.
     Uses the default scaling algorithm for better performance.
@@ -29,7 +30,7 @@ def aa05(surf: pg.Surface) -> pg.Surface:
     return pg.transform.scale2x(pg.transform.scale_by(surf, 0.5))
 
 
-def aa05_hq(surf: pg.Surface) -> pg.Surface:
+def ssaa05_hq(surf: pg.Surface) -> pg.Surface:
     """
     Applies SSAA 0.5x to the given surface and returns a new surface of the same size.
     Uses the smoothed scaling algorithm for better quality.
@@ -42,7 +43,8 @@ def aa05_hq(surf: pg.Surface) -> pg.Surface:
     )
     return pg.transform.scale2x(pg.transform.smoothscale_by(surf, 0.5))
 
-def aa05_lq(surf: pg.Surface) -> pg.Surface:
+
+def ssaa05_lq(surf: pg.Surface) -> pg.Surface:
     assert isinstance(surf, pg.Surface)
     assert surf.get_width() % 2 == 0 and surf.get_height() % 2 == 0, (
         "Surface dimensions must be even for SSAA."
@@ -50,7 +52,7 @@ def aa05_lq(surf: pg.Surface) -> pg.Surface:
     return pg.transform.scale_by(pg.transform.scale_by(surf, 0.5), 2)
 
 
-def aa2(surf: pg.Surface) -> pg.Surface:
+def ssaa2(surf: pg.Surface) -> pg.Surface:
     """
     Apples SSAA 2x to the give surface and returns a new surface of the same size.
     Uses the default scaling algorithm for better performance.
@@ -61,7 +63,7 @@ def aa2(surf: pg.Surface) -> pg.Surface:
     return pg.transform.scale_by(pg.transform.scale2x(surf), 0.5)
 
 
-def aa2_hq(surf: pg.Surface) -> pg.Surface:
+def ssaa2_hq(surf: pg.Surface) -> pg.Surface:
     """
     Applies SSAA 2x to the given surface and returns a new surface of the same size.
     Uses the smoothed scaling algorithm for better quality.
@@ -71,11 +73,13 @@ def aa2_hq(surf: pg.Surface) -> pg.Surface:
     assert isinstance(surf, pg.Surface)
     return pg.transform.smoothscale_by(pg.transform.scale2x(surf), 0.5)
 
-def aa2_lq(surf: pg.Surface) -> pg.Surface:
+
+def ssaa2_lq(surf: pg.Surface) -> pg.Surface:
     assert isinstance(surf, pg.Surface)
     return pg.transform.scale_by(pg.transform.scale_by(surf, 2), 0.5)
 
-def aa4(surf: pg.Surface) -> pg.Surface:
+
+def ssaa4(surf: pg.Surface) -> pg.Surface:
     """
     Applies SSAA 4x to the given surface and returns a new surface of the same size.
     Uses the default scaling algorithm for better performance.
@@ -86,7 +90,7 @@ def aa4(surf: pg.Surface) -> pg.Surface:
     return pg.transform.scale_by(pg.transform.scale_by(surf, 4), 0.25)
 
 
-def aa4_hq(surf: pg.Surface) -> pg.Surface:
+def ssaa4_hq(surf: pg.Surface) -> pg.Surface:
     """
     Applies SSAA 4x to the given surface and returns a new surface of the same size.
     Uses the smoothed scaling algorithm for better quality.
@@ -96,7 +100,8 @@ def aa4_hq(surf: pg.Surface) -> pg.Surface:
     assert isinstance(surf, pg.Surface)
     return pg.transform.smoothscale_by(pg.transform.smoothscale_by(surf, 4), 0.25)
 
-def aa8(surf: pg.Surface) -> pg.Surface:
+
+def ssaa8(surf: pg.Surface) -> pg.Surface:
     """
     Applies SSAA 8x to the given surface and returns a new surface of the same size.
     Uses the default scaling algorithm for better performance.
@@ -112,7 +117,8 @@ def aa8(surf: pg.Surface) -> pg.Surface:
     )
     return pg.transform.scale_by(pg.transform.scale_by(surf, 8), 0.125)
 
-def aa8_hq(surf: pg.Surface) -> pg.Surface:
+
+def ssaa8_hq(surf: pg.Surface) -> pg.Surface:
     """
     Applies SSAA 8x to the given surface and returns a new surface of the same size.
     Uses the smoothed scaling algorithm for better quality.
@@ -128,8 +134,97 @@ def aa8_hq(surf: pg.Surface) -> pg.Surface:
     )
     return pg.transform.smoothscale_by(pg.transform.smoothscale_by(surf, 8), 0.125)
 
-def aa32(surf: pg.Surface) -> pg.Surface:
+
+def ssaa32(surf: pg.Surface) -> pg.Surface:
     assert isinstance(surf, pg.Surface)
     if __debug__:
-        print("SSAA32x is for benchmarking purposes only, it is not to be used in any code not involving benchmarking.")
+        print(
+            "SSAA32x is for benchmarking purposes only, it is not to be used in any code not involving benchmarking."
+        )
+    assert pg.version.vernum.major >= 2 and pg.version.vernum.minor >= 4, (
+        "SSAA32x requires Pygame-CE 2.4.0 or later. The hardware acceleration is required."
+    )
     return pg.transform.smoothscale_by(pg.transform.smoothscale_by(surf, 32), (1 / 32))
+
+
+def ssaa(
+    surf: pg.Surface, factor: Union[float, int] = 2, hq: bool = True
+) -> pg.Surface:
+    """
+    Applies Super Sampling Anti-Aliasing (SSAA) to the given surface based on the specified factor.
+
+    This function allows custom levels of SSAA, and works as a wrapper for multiple SSAA functions:
+
+    - SSAA 0.5x: `ssaa05` or `ssaa05_hq`
+    - SSAA 2x: `ssaa2` or `ssaa2_hq`
+    - SSAA 4x: `ssaa4` or `ssaa4_hq`
+    - SSAA 8x: `ssaa8` or `ssaa8_hq`
+    - SSAA 32x: `ssaa32`
+
+    It is actually slower to use this function than to use the specific SSAA functions directly, but it provides a convenient way to apply SSAA based on a factor that isn't hard-coded.
+
+    :param surf: pygame.Surface: The surface to apply SSAA to.
+    :param factor: Union[0.5, (unsigned) int]: The SSAA factor to apply.
+    :param hq: bool: If True, uses high-quality scaling (smooth scaling), otherwise uses the default scaling.
+    :return: pygame.Surface: A new surface with SSAA applied.
+    """
+
+    assert isinstance(surf, pg.Surface)
+    assert isinstance(factor, int) or factor == 0.5
+    assert factor <= 256, (
+        "SSAA factor must be less than or equal to 256, although it is not recommended to use anything above 4 let alone 32."
+    )
+    assert factor > 0, "SSAA factor must be greater than 0."
+
+    if factor == 0.5:
+        if hq:
+            return ssaa05_hq(surf)
+        return ssaa05(surf)
+    elif factor == 2:
+        if hq:
+            return ssaa2_hq(surf)
+        return ssaa2(surf)
+    elif factor == 4:
+        if hq:
+            return ssaa4_hq(surf)
+        return ssaa4(surf)
+    elif factor == 8:
+        if hq:
+            return ssaa8_hq(surf)
+        return ssaa8(surf)
+    elif factor == 32:
+        return ssaa32(surf)
+    elif factor == 1:
+        if __debug__:
+            print(
+                "SSAA with a factor of 1 (SSAA1x) doesn't exists, returning the original surface."
+            )
+        return surf
+    else:
+        if hq:
+            return pg.transform.smoothscale_by(
+                pg.transform.smoothscale_by(surf, factor), 1 / factor
+            )
+        return pg.transform.scale_by(pg.transform.scale_by(surf, factor), 1 / factor)
+
+
+def ssaa_lq(surf: pg.Surface, factor: Union[float, int] = 2) -> pg.Surface:
+    """
+    Alias of the function `ssaa` with `hq=False`.
+
+    :param surf: pygame.Surface: The surface to apply SSAA to.
+    :param factor: Union[0.5, (unsigned) int]: The SSAA factor to apply.
+    :return: pygame.Surface: A new surface with SSAA applied.
+    """
+    return ssaa(surf, factor, hq=False)
+
+
+def ssaa_hq(surf: pg.Surface, factor: Union[float, int] = 2) -> pg.Surface:
+    """
+    Alias of the function `ssaa` with `hq=True`.
+
+    :param surf: pygame.Surface: The surface to apply SSAA to.
+    :param factor: Union[0.5, (unsigned) int]: The SSAA factor to apply.
+    :return: pygame.Surface: A new surface with SSAA applied.
+    """
+    return ssaa(surf, factor, hq=True)
