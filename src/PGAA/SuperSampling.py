@@ -207,6 +207,9 @@ def ssaa(
             )
         return pg.transform.scale_by(pg.transform.scale_by(surf, factor), 1 / factor)
 
+    #If somehow, the code doesn't return anything, we return the original surface.
+    return surf
+
 
 def ssaa_lq(surf: pg.Surface, factor: Union[float, int] = 2) -> pg.Surface:
     """
