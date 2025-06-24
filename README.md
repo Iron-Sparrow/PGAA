@@ -19,4 +19,4 @@ After you've installed PGAA, you can check out the documentation.
 
 ## Documentation
 
-Documentation can be found at [in the docs folder](docs/Documentation.md).
+Documentation can be found at [in the docs folder](https://github.com/Iron-Sparrow/PGAA/blob/main/docs/Documentation.md).
