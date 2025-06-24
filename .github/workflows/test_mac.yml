@@ -39,5 +39,5 @@ jobs:
 
       - name: Import PGAA
         run: |
-          python -c "import pgaa; print(pgaa.__version__)"
+          python -c "import PGAA; print(PGAA.__version__)"
         continue-on-error: true
