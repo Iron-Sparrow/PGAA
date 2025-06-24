@@ -14,3 +14,13 @@ PGAA is a Python Package that provides multiple forms of anti-aliasing for [Pyga
 > It was added in **0.1.0**.
 
 To check out the documentation for SSAA, see [SuperSampling.md](../docs/SuperSampling.md).
+
+### MLAA (Morphological Anti-Aliasing)
+
+> [!NOTE]
+> It was added in **1.0.0**.
+
+> [!WARNING]
+> MLAA requires Numpy to run.
+
+To check out the documentation for MLAA, see [Morphological.md](../docs/Morphological.md).

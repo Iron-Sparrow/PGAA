@@ -198,6 +198,15 @@ def mlaa(
 def custom_mlaa(
     surf: pg.Surface, threshold: int, kernel: int, blend: float, f4: bool
 ) -> pg.Surface:
+    """
+    Custom Morphological Anti-Aliasing function for Pygame-CE surfaces.
+    :param surf: pygame.Surface: The surface to apply custom MLAA to.
+    :param threshold: int: The threshold for edge detection (1-100).
+    :param kernel: int: The size of the smoothing kernel (must be an odd integer > 1).
+    :param blend: float: The blending factor (0.0 to 1.0).
+    :param f4: bool: If True, use float64 for calculations; otherwise, use float32.
+    :return: pygame.Surface: A new surface with custom MLAA applied.
+    """
     assert isinstance(surf, pg.Surface)
     assert isinstance(threshold, int) and threshold > 0
     assert threshold <= 100
