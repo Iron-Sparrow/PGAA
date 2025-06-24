@@ -20,7 +20,8 @@ from PGAA import SuperSampling as SSAA
 `ssaa05(surf)` where `surf`is a Pygame-CE surface and where the function returns a new surface with the anti-aliasing applied.
 
 > [!NOTE]
-> Added in **0.1.0**.\
+> Added in **0.1.0**.
+
 > [!WARNING]
 > Change from `aa05` to `ssaa05` in **0.3.1**.
 
@@ -35,7 +36,8 @@ Thanks to the optimised algorith found in [pygame-ce](https://pyga.me/docs/ref/t
 `ssaa05_hq(surf)` where `surf` is a Pygame-CE surface and where the function returns a new surface with the smooth anti-aliasing applied.
 
 > [!NOTE] 
-> Added in **0.1.0**.\
+> Added in **0.1.0**.
+
 > [!WARNING]
 > Change from `aa05_hq` to `ssaa05_hq` in **0.3.1**.
 
@@ -44,7 +46,8 @@ Thanks to the optimised algorith found in [pygame-ce](https://pyga.me/docs/ref/t
 `...`
 
 > [!NOTE]
-> Added in **0.2.2**.\
+> Added in **0.2.2**.
+
 > [!WARNING]
 > Change from `aa05_lq` to `ssaa05_lq` in **0.3.1**.
  
@@ -53,7 +56,8 @@ Thanks to the optimised algorith found in [pygame-ce](https://pyga.me/docs/ref/t
 `...`
 
 > [!NOTE]
-> Added in **0.1.0**.\
+> Added in **0.1.0**.
+
 > [!WARNING]
 > Change from `aa2` to `ssaa2` in **0.3.1**.
 
@@ -62,7 +66,8 @@ Thanks to the optimised algorith found in [pygame-ce](https://pyga.me/docs/ref/t
 `...`
 
 > [!NOTE]
-> Added in **0.1.0**.\
+> Added in **0.1.0**.
+
 > [!WARNING]
 > Change from `aa2_hq` to `ssaa2_hq` in **0.3.1**.
 
@@ -71,7 +76,8 @@ Thanks to the optimised algorith found in [pygame-ce](https://pyga.me/docs/ref/t
 `...`
 
 > [!NOTE]
-> Added in **0.2.2**.\
+> Added in **0.2.2**.
+
 > [!WARNING]
 > Change from `aa2_lq` to `ssaa2_lq` in **0.3.1**.
 
@@ -80,7 +86,8 @@ Thanks to the optimised algorith found in [pygame-ce](https://pyga.me/docs/ref/t
 `...`
 
 > [!NOTE]
-> Added in **0.1.0**.\
+> Added in **0.1.0**.
+
 > [!WARNING]
 > Change from `aa4` to `ssaa4` in **0.3.1**.
 
@@ -89,7 +96,8 @@ Thanks to the optimised algorith found in [pygame-ce](https://pyga.me/docs/ref/t
 `...`
 
 > [!NOTE]
-> Added in **0.1.0**.\
+> Added in **0.1.0**.
+
 > [!WARNING]
 > Change from `aa4_hq` to `ssaa4_hq` in **0.3.1**.
 
@@ -98,7 +106,8 @@ Thanks to the optimised algorith found in [pygame-ce](https://pyga.me/docs/ref/t
 `...`
 
 > [!NOTE]
-> Added in **0.2.1**.\
+> Added in **0.2.1**.
+
 > [!WARNING]
 > Change from `aa8` to `ssaa8` in **0.3.1**.
 
@@ -107,7 +116,8 @@ Thanks to the optimised algorith found in [pygame-ce](https://pyga.me/docs/ref/t
 `...`
 
 > [!NOTE]
-> Added in **0.2.1**.\
+> Added in **0.2.1**.
+
 > [!WARNING]
 > Change from `aa8_hq` to `ssaa8_hq` in **0.3.1**.
 
@@ -116,7 +126,8 @@ Thanks to the optimised algorith found in [pygame-ce](https://pyga.me/docs/ref/t
 `...`
 
 > [!NOTE]
-> Added in **0.2.2**.\
+> Added in **0.2.2**.
+
 > [!WARNING]
 > Change from `aa32` to `ssaa32` in **0.3.1**.
 
