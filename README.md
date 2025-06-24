@@ -12,6 +12,10 @@ This project is not affiliated with the Pygame-CE project.***</ins>
 
  ```python -m pip install pgaa``` or check out the [releases](https://github.com/Iron-Sparrow/PGAA/releases).
 
+## Updating the package
+
+```python -m pip install --upgrade pgaa```
+
 ## Getting Started
 
 After you've installed PGAA, you can check out the documentation.
