@@ -28,7 +28,7 @@ classifiers = [
 requires-python = ">=3.9"
 dependencies = [
     "pygame-ce >=2.4.0, <3",
-    "numpy >= 1.24.1, <2.3"
+    "numpy >= 1.24.1, <2.4"
 ]
 #license = "IronSparrow License - June 2025 - License Version 1 (revision 3)"
 license-files = ["LICEN[CS]E*"]

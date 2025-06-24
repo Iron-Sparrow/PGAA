@@ -7,7 +7,7 @@ The downside to SSAA is that it is very resource-intensive, as it requires eithe
 
 ## Usage in code
 
-In order to use SSAA in your code, you need to import Supersampling from the PGAA package.
+To use SSAA in your code, you need to import Supersampling from the PGAA package.
 
 ```
 from PGAA import SuperSampling as SSAA

@@ -195,7 +195,7 @@ def mlaa(
     return surf
 
 
-def custom_mlaa(
+def mlaa_custom(
     surf: pg.Surface, threshold: int, kernel: int, blend: float, f4: bool
 ) -> pg.Surface:
     """
@@ -242,7 +242,10 @@ def custom_mlaa(
 
 
 # Aliases for the MLAA functions
-mlaa_lq = mlaa_low
-mlaa_default = mlaa_med = mlaa_medium
-mlaa_hq = mlaa_high
-mlaa_very_hq = mlaa_vhq = mlaa_very_high
+mlaa_lq = mlaa_low_quality = mlaa_low
+mlaa_default = mlaa_med = mlaa_medium_quality = mlaa_mq = mlaa_medium
+mlaa_hq = mlaa_high_quality = mlaa_high
+mlaa_very_hq = mlaa_veryhigh = mlaa_vhq = mlaa_very_high_quality = (
+    mlaa_veryhighquality
+) = mlaa_very_high
+custom_mlaa = mlaa_custom_quality = custom_mlaa_quality = mlaa_custom
