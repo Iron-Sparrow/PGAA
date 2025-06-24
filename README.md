@@ -3,6 +3,7 @@
 [![CodeQL](https://github.com/Iron-Sparrow/PGAA/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/Iron-Sparrow/PGAA/actions/workflows/github-code-scanning/codeql)
 ![PyPi Version](https://img.shields.io/pypi/v/pgaa.svg?v=1)
 [![Upload Python Package](https://github.com/Iron-Sparrow/PGAA/actions/workflows/python-publish.yml/badge.svg)](https://github.com/Iron-Sparrow/PGAA/actions/workflows/python-publish.yml)
+[![Test Package Compatibility on MacOS](https://github.com/Iron-Sparrow/PGAA/actions/workflows/test_mac.yml/badge.svg)](https://github.com/Iron-Sparrow/PGAA/actions/workflows/test_mac.yml)
 
 > [!NOTE]
 > This project is very new and still under development. Expect bugs, issues, and incomplete features.
