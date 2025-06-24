@@ -246,6 +246,8 @@ ssaa_4 = ssaa_4x = ssaa4x = ssaa4
 ssaa_4_hq = ssaa_4x_hq = ssaa4x_hq = ssaa4_hq
 ssaa_8 = ssaa_8x = ssaa8x = ssaa8
 ssaa_8_hq = ssaa_8x_hq = ssaa8x_hq = ssaa8_hq
-ssaa_32 = ssaa_32x = ssaa32x = ssaa32
-ssaa_low = ssaa_lq
-ssaa_high = ssaa_hq
+ssaa_32 = ssaa_32x = ssaa32x = ssaa32_hq = ssaa_32_hq = ssaa32x_hq = ssaa_32x_hq = (
+    ssaa32
+)
+ssaa_low = ssaa_low_quality = ssaa_lq
+ssaa_high = ssaa_high_quality = ssaa_hq

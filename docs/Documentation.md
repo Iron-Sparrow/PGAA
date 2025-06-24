@@ -1,5 +1,9 @@
 # Documentation
 
+> [!IMPORTANT]
+> Documentation is a work in progress and may not be complete nor fully accurate.
+> It is very likely that there are more features than documented, so if you want to go beyond the documentation, you can check out the source code in the [GitHub repository](https://github.com/Iron-Sparrow/PGAA/tree/main/src/PGAA).
+
 ## What is PGAA?
 
 PGAA is a Python Package that provides multiple forms of anti-aliasing for [Pygame-CE surfaces](https://pyga.me/docs/ref/surface.html).
