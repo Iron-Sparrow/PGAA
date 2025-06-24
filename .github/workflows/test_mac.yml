@@ -2,6 +2,9 @@ name: Test Package Compatibility on MacOS
 
 on: push
 
+permissions:
+  contents: read
+
 jobs:
   check-python-compatibility:
     name: Check Compatibility with Python versions
