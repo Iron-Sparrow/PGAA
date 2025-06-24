@@ -5,7 +5,7 @@ Due to the nature of SSAA, it is expected that the performances will be lower th
 Note: This class is designed to work with Pygame-CE (Pygame Community Edition) and isn't compatible with other versions of Pygame.
 It requires Pygame-CE 2.2.1 or later for it to function correctly. It only works on ARM64 architectures from Pygame-CE 2.4.0 onwards.
 
-Currently only SSAA0.5x, SSAA2x, and SSAA4x are implemented.
+Currently SSAA0.5x, SSAA2x, and SSAA4x, SSAA8x, SSAA32x are implemented and customisable versions are possible through the `ssaa` function.
 """
 
 import pygame as pg
@@ -167,6 +167,8 @@ def ssaa(
     :param factor: Union[0.5, (unsigned) int]: The SSAA factor to apply.
     :param hq: bool: If True, uses high-quality scaling (smooth scaling), otherwise uses the default scaling.
     :return: pygame.Surface: A new surface with SSAA applied.
+
+    SSAA lq is on purpose not available in the `ssaa` function, as it is not recommended to use it, due to risk of performance issues with worse visuals.
     """
 
     assert isinstance(surf, pg.Surface)
@@ -231,3 +233,19 @@ def ssaa_hq(surf: pg.Surface, factor: Union[float, int] = 2) -> pg.Surface:
     :return: pygame.Surface: A new surface with SSAA applied.
     """
     return ssaa(surf, factor, hq=True)
+
+
+# Aliases for the SSAA functions
+ssaa_05 = ssaa_05x = ssaa05x = ssaa05
+ssaa_05_hq = ssaa_05x_hq = ssaa05x_hq = ssaa05_hq
+ssaa_05_lq = ssaa_05x_lq = ssaa05x_lq = ssaa05_lq
+ssaa_2 = ssaa_2x = ssaa2x = ssaa2
+ssaa_2_hq = ssaa_2x_hq = ssaa2x_hq = ssaa_default = ssaa2_hq
+ssaa_2_lq = ssaa_2x_lq = ssaa2x_lq = ssaa2_lq
+ssaa_4 = ssaa_4x = ssaa4x = ssaa4
+ssaa_4_hq = ssaa_4x_hq = ssaa4x_hq = ssaa4_hq
+ssaa_8 = ssaa_8x = ssaa8x = ssaa8
+ssaa_8_hq = ssaa_8x_hq = ssaa8x_hq = ssaa8_hq
+ssaa_32 = ssaa_32x = ssaa32x = ssaa32
+ssaa_low = ssaa_lq
+ssaa_high = ssaa_hq
