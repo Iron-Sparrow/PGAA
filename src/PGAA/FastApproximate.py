@@ -142,3 +142,9 @@ def fxaa311(
     result = np.clip(result, 0, 255).astype(np.uint8)
 
     return pg.surfarray.make_surface(result)
+
+
+# Aliases
+fxaa_default = legacy_fxaa = fxaa_legacy = fxaa
+fxaa_3_11 = modern_fxaa = fxaa_modern = fxaa311
+fxaa_high_quality = fxaa_highquality = fxaa_hq

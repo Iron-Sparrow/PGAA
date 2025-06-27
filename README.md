@@ -7,7 +7,8 @@
 [![Test Package Compatibility on Windows (x64)](https://github.com/Iron-Sparrow/PGAA/actions/workflows/test_windows.yml/badge.svg)](https://github.com/Iron-Sparrow/PGAA/actions/workflows/test_windows.yml)
 [![Test Package Compatibility on MacOS](https://github.com/Iron-Sparrow/PGAA/actions/workflows/test_mac.yml/badge.svg)](https://github.com/Iron-Sparrow/PGAA/actions/workflows/test_mac.yml)
 [![Test Package Compatibility on Ubuntu ARM](https://github.com/Iron-Sparrow/PGAA/actions/workflows/test_ubuntu_arm.yml/badge.svg)](https://github.com/Iron-Sparrow/PGAA/actions/workflows/test_ubuntu_arm.yml)
-[![Test Package Compatibility on Windows on ARM](https://github.com/Iron-Sparrow/PGAA/actions/workflows/test_windows_arm.yml/badge.svg)](https://github.com/Iron-Sparrow/PGAA/actions/workflows/test_windows_arm.yml)
+*This package is not compatible with Windows on ARM*
+
 
 <ins>***This project is very new and still under development. Expect bugs, issues, and incomplete features.
 This project is not affiliated with the Pygame-CE project.***</ins>
