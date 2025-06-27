@@ -28,7 +28,7 @@ def mlaa_low(surf: pg.Surface, f4: bool = False) -> pg.Surface:
     diff_x = np.abs(np.diff(gray, axis=0, append=gray[-1:]))
     diff_y = np.abs(np.diff(gray, axis=1, append=gray[:, -1:]))
 
-    edge_mask = ((diff_x + diff_y) > 60).astype(np.float32 if not f4 else np.flaot64)[
+    edge_mask = ((diff_x + diff_y) > 60).astype(np.float32 if not f4 else np.float64)[
         ..., np.newaxis
     ]
 
