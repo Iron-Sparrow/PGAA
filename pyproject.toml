@@ -41,7 +41,11 @@ convention = "numpy"
 
 [tool.ruff.lint]
 select = [
-    "D"
+    "D",
+    "F",
+    "E",
+    "W",
+    "I"
 ]
 
 [tool.ruff]
