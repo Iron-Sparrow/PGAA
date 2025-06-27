@@ -10,14 +10,15 @@ PGAA is a Python Package that provides multiple forms of anti-aliasing for [Pyga
 
 ## Available Anti-Aliasing Methods
 
-### SSAA (Super Sample Anti-Aliasing)
-> [!TIP]
-> SSAA was implemented as the first algorith and doesn't require Numpy to run.
+### FXAA (Fast Approximate Anti-Aliasing)
 
 > [!NOTE]
-> It was added in **0.1.0**.
+> It was added in **2.0.0**.
 
-To check out the documentation for SSAA, see [SuperSampling.md](../docs/SuperSampling.md).
+> [!WARNING]
+> FXAA requires Numpy to run.
+
+To check out the documentation for FXAA, see [FastApproximate.md](../docs/FastApproximate.md)
 
 ### MLAA (Morphological Anti-Aliasing)
 
@@ -28,3 +29,12 @@ To check out the documentation for SSAA, see [SuperSampling.md](../docs/SuperSam
 > MLAA requires Numpy to run.
 
 To check out the documentation for MLAA, see [Morphological.md](../docs/Morphological.md).
+
+### SSAA (Super Sample Anti-Aliasing)
+> [!TIP]
+> SSAA was implemented as the first algorith and doesn't require Numpy to run.
+
+> [!NOTE]
+> It was added in **0.1.0**.
+
+To check out the documentation for SSAA, see [SuperSampling.md](../docs/SuperSampling.md).

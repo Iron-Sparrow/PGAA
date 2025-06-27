@@ -6,10 +6,6 @@ import pygame as pg
 import numpy as np
 from typing import Union, Literal
 
-assert getattr(pg, "IS_CE", False), (
-    "This module is designed to work with Pygame-CE (Pygame Community Edition) only."
-)
-
 
 def mlaa_low(surf: pg.Surface, f4: bool = False) -> pg.Surface:
     """
@@ -28,9 +24,9 @@ def mlaa_low(surf: pg.Surface, f4: bool = False) -> pg.Surface:
     diff_x = np.abs(np.diff(gray, axis=0, append=gray[-1:]))
     diff_y = np.abs(np.diff(gray, axis=1, append=gray[:, -1:]))
 
-    edge_mask = ((diff_x + diff_y) > 60).astype(np.float32 if not f4 else np.float64)[
-        ..., np.newaxis
-    ]
+    edge_mask = ((diff_x + diff_y) > 60).astype(
+        np.float32 if not f4 else np.float64
+    )[..., np.newaxis]
 
     kernel_1d = np.ones(3, dtype=(np.float32 if not f4 else np.float64)) / 3
     smooth_x = np.apply_along_axis(
@@ -62,9 +58,9 @@ def mlaa_medium(surf: pg.Surface, f4: bool = False) -> pg.Surface:
 
     diff_x = np.abs(np.diff(gray, axis=0, append=gray[-1:]))
     diff_y = np.abs(np.diff(gray, axis=1, append=gray[:, -1:]))
-    edge_mask = ((diff_x + diff_y) > 40).astype(np.float32 if not f4 else np.float64)[
-        ..., np.newaxis
-    ]
+    edge_mask = ((diff_x + diff_y) > 40).astype(
+        np.float32 if not f4 else np.float64
+    )[..., np.newaxis]
 
     kernel_1d = np.ones(5, dtype=(np.float32 if not f4 else np.float64)) / 5
     smooth_x = np.apply_along_axis(
@@ -97,9 +93,9 @@ def mlaa_high(surf: pg.Surface, f4: bool = True) -> pg.Surface:
 
     diff_x = np.abs(np.diff(gray, axis=0, append=gray[-1:]))
     diff_y = np.abs(np.diff(gray, axis=1, append=gray[:, -1:]))
-    edge_mask = ((diff_x + diff_y) > 25).astype(np.float32 if not f4 else np.float64)[
-        ..., np.newaxis
-    ]
+    edge_mask = ((diff_x + diff_y) > 25).astype(
+        np.float32 if not f4 else np.float64
+    )[..., np.newaxis]
 
     kernel_1d = np.ones(7, dtype=(np.float32 if not f4 else np.float64)) / 7
     smooth_x = np.apply_along_axis(
@@ -131,9 +127,9 @@ def mlaa_very_high(surf: pg.Surface, f4: bool = True) -> pg.Surface:
 
     diff_x = np.abs(np.diff(gray, axis=0, append=gray[-1:]))
     diff_y = np.abs(np.diff(gray, axis=1, append=gray[:, -1:]))
-    edge_mask = ((diff_x + diff_y) > 16).astype(np.float32 if not f4 else np.float64)[
-        ..., np.newaxis
-    ]
+    edge_mask = ((diff_x + diff_y) > 16).astype(
+        np.float32 if not f4 else np.float64
+    )[..., np.newaxis]
 
     kernel_1d = np.ones(9, dtype=(np.float32 if not f4 else np.float64)) / 9
     smooth_x = np.apply_along_axis(
@@ -226,7 +222,9 @@ def mlaa_custom(
         np.float32 if not f4 else np.float64
     )[..., np.newaxis]
 
-    kernel_1d = np.ones(kernel, dtype=(np.float32 if not f4 else np.float64)) / kernel
+    kernel_1d = (
+        np.ones(kernel, dtype=(np.float32 if not f4 else np.float64)) / kernel
+    )
     smooth_x = np.apply_along_axis(
         lambda m: np.convolve(m, kernel_1d, mode="same"), axis=0, arr=array
     )

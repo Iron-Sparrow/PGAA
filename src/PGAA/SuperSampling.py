@@ -98,7 +98,9 @@ def ssaa4_hq(surf: pg.Surface) -> pg.Surface:
     :return: pygame.Surface: A new surface with SSAA applied.
     """
     assert isinstance(surf, pg.Surface)
-    return pg.transform.smoothscale_by(pg.transform.smoothscale_by(surf, 4), 0.25)
+    return pg.transform.smoothscale_by(
+        pg.transform.smoothscale_by(surf, 4), 0.25
+    )
 
 
 def ssaa8(surf: pg.Surface) -> pg.Surface:
@@ -132,7 +134,9 @@ def ssaa8_hq(surf: pg.Surface) -> pg.Surface:
     assert pg.version.vernum.major >= 2 and pg.version.vernum.minor >= 4, (
         "SSAA8x requires Pygame-CE 2.4.0 or later. The hardware acceleration is required."
     )
-    return pg.transform.smoothscale_by(pg.transform.smoothscale_by(surf, 8), 0.125)
+    return pg.transform.smoothscale_by(
+        pg.transform.smoothscale_by(surf, 8), 0.125
+    )
 
 
 def ssaa32(surf: pg.Surface) -> pg.Surface:
@@ -144,7 +148,9 @@ def ssaa32(surf: pg.Surface) -> pg.Surface:
     assert pg.version.vernum.major >= 2 and pg.version.vernum.minor >= 4, (
         "SSAA32x requires Pygame-CE 2.4.0 or later. The hardware acceleration is required."
     )
-    return pg.transform.smoothscale_by(pg.transform.smoothscale_by(surf, 32), (1 / 32))
+    return pg.transform.smoothscale_by(
+        pg.transform.smoothscale_by(surf, 32), (1 / 32)
+    )
 
 
 def ssaa(
@@ -207,7 +213,9 @@ def ssaa(
             return pg.transform.smoothscale_by(
                 pg.transform.smoothscale_by(surf, factor), 1 / factor
             )
-        return pg.transform.scale_by(pg.transform.scale_by(surf, factor), 1 / factor)
+        return pg.transform.scale_by(
+            pg.transform.scale_by(surf, factor), 1 / factor
+        )
 
     # If somehow, the code doesn't return anything, we return the original surface.
     return surf
@@ -246,8 +254,8 @@ ssaa_4 = ssaa_4x = ssaa4x = ssaa4
 ssaa_4_hq = ssaa_4x_hq = ssaa4x_hq = ssaa4_hq
 ssaa_8 = ssaa_8x = ssaa8x = ssaa8
 ssaa_8_hq = ssaa_8x_hq = ssaa8x_hq = ssaa8_hq
-ssaa_32 = ssaa_32x = ssaa32x = ssaa32_hq = ssaa_32_hq = ssaa32x_hq = ssaa_32x_hq = (
-    ssaa32
-)
+ssaa_32 = ssaa_32x = ssaa32x = ssaa32_hq = ssaa_32_hq = ssaa32x_hq = (
+    ssaa_32x_hq
+) = ssaa32
 ssaa_low = ssaa_low_quality = ssaa_lq
 ssaa_high = ssaa_high_quality = ssaa_hq
