@@ -5,7 +5,7 @@ Due to the nature of SSAA, it is expected that the performances will be lower th
 Note: This class is designed to work with Pygame-CE (Pygame Community Edition) and isn't compatible with other versions of Pygame.
 It requires Pygame-CE 2.2.1 or later for it to function correctly. It only works on ARM64 architectures from Pygame-CE 2.4.0 onwards.
 
-Currently SSAA0.5x, SSAA2x, and SSAA4x, SSAA8x, SSAA32x are implemented and customisable versions are possible through the `ssaa` function.
+Currently, SSAA0.5x, SSAA2x, and SSAA4x, SSAA8x, SSAA32x are implemented and customisable versions are possible through the `ssaa` function.
 """
 
 import pygame as pg

@@ -1,7 +1,7 @@
 """
 Various functions for applying Fast Approximate Anti-Aliasing (FXAA) to Pygame-CE surfaces.
 
-Due to the nature of FXAA, results may be percieved as blurry or soft.
+Due to the nature of FXAA, results may be perceived as blurry or soft.
 """
 
 import pygame as pg
