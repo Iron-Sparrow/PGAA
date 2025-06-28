@@ -17,6 +17,7 @@ def fxaa(
     surf: pg.Surface, threshold: Union[int, float] = 20, f4: bool = False
 ) -> pg.Surface:
     """
+    :param threshold: float or int
     :param surf: pygame.Surface:
     :param f4: bool:
     :return: pygame.Surface:
@@ -60,6 +61,7 @@ def fxaa_hq(
     surf: pg.Surface, threshold: Union[int, float] = 10, f4: bool = True
 ) -> pg.Surface:
     """
+    :param threshold: flaot or int
     :param surf: pygame.Surface:
     :param f4: bool:
     :return: pygame.Surface:
@@ -100,6 +102,7 @@ def fxaa311(
     surf: pg.Surface, threshold: Union[int, float] = 0.05, f4: bool = False
 ) -> pg.Surface:
     """
+    :param threshold: float or int
     :param surf: pygame.Surface:
     :param f4: bool:
     :return: pygame.Surface:
