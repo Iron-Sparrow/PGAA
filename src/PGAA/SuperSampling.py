@@ -208,17 +208,14 @@ def ssaa(
                 "SSAA with a factor of 1 (SSAA1x) doesn't exists, returning the original surface."
             )
         return surf
-    else:
-        if hq:
-            return pg.transform.smoothscale_by(
-                pg.transform.smoothscale_by(surf, factor), 1 / factor
-            )
-        return pg.transform.scale_by(
-            pg.transform.scale_by(surf, factor), 1 / factor
+    # else not required due to the returns above.
+    if hq:
+        return pg.transform.smoothscale_by(
+            pg.transform.smoothscale_by(surf, factor), 1 / factor
         )
-
-    # If somehow, the code doesn't return anything, we return the original surface.
-    return surf
+    return pg.transform.scale_by(
+        pg.transform.scale_by(surf, factor), 1 / factor
+    )
 
 
 def ssaa_lq(surf: pg.Surface, factor: Union[float, int] = 2) -> pg.Surface:

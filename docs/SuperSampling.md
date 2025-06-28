@@ -43,7 +43,7 @@ Thanks to the optimised algorith found in [pygame-ce](https://pyga.me/docs/ref/t
 
 ### SSAA0.5x LQ
 
-`...`
+`ssaa05_lq(surf)` where `surf` is a Pygame-CE surface and where it returns a new surface with anti-aliasing applied. It doesn't use the algorithm used in ssa05, but rather the default (faster but less good-looking one). More info on [here.](https://pyga.me/docs/ref/transform.html#pygame.transform.scale)
 
 > [!NOTE]
 > Added in **0.2.2**.
@@ -53,7 +53,7 @@ Thanks to the optimised algorith found in [pygame-ce](https://pyga.me/docs/ref/t
  
 ### SSAA2x
 
-`...`
+`ssaa2(surf)` where `surf` is a Pygame-CE surface and where it returns a new surface with anti-aliasing applied. This functions uses the high quality [2x upscaling algorithm](https://pyga.me/docs/ref/transform.html#pygame.transform.scale2x) but uses the fast downscaling algorithm. It is suggested to use the High Quality version of this function for better results.
 
 > [!NOTE]
 > Added in **0.1.0**.
@@ -63,7 +63,7 @@ Thanks to the optimised algorith found in [pygame-ce](https://pyga.me/docs/ref/t
 
 ### SSAA2x HQ
 
-`...`
+`ssaa2_hq(surf)` where `surf` is a Pygame-CE surface and where it returns a new surface with the anti-aliasing applied. This function uses the high quality [2x upscaling algorithm](https://pyga.me/docs/ref/transform.html#pygame.transform.scale2x) and the smoother higher quality downscaling algorithm. This is the recommended function to use for SSAA2x and thus is the default for SuperSampling.
 
 > [!NOTE]
 > Added in **0.1.0**.
@@ -123,7 +123,7 @@ Thanks to the optimised algorith found in [pygame-ce](https://pyga.me/docs/ref/t
 
 ### SSAA32x
 
-`...`
+`ssaa32(surf)` where `surf` is a Pygame-CE surface and where it returns a new surface with anti-aliasing applied. This function is only meant to be used for Benchmarking purposes has no real use in production code. It uses [smoothscale](https://pyga.me/docs/ref/transform.html#pygame.transform.smoothscale) by default, as a means to get the best looking results.
 
 > [!NOTE]
 > Added in **0.2.2**.
