@@ -2,7 +2,7 @@
 
 ## What is FXAA?
 
-FXAA, or Fast Approximate Anti-Aliasing, is a an anti-aliasing technique invented by Timothy Lottes.
+FXAA, or Fast Approximate Anti-Aliasing, is an anti-aliasing technique invented by Timothy Lottes.
 
 ## Usage in code
 
