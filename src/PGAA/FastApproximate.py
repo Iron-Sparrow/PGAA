@@ -14,9 +14,13 @@ assert getattr(pg, "IS_CE", False), (
 
 
 def fxaa(
-    surf: pg.Surface, threshold: Union[int, float] = 20, f4: bool = False
+    surf: pg.Surface,
+    threshold: Union[int, float] = 20,
+    diagonal_blur: bool = False,
+    f4: bool = False,
 ) -> pg.Surface:
     """
+    :param diagonal_blur: bool
     :param threshold: float or int
     :param surf: pygame.Surface:
     :param f4: bool:
@@ -51,6 +55,13 @@ def fxaa(
         + np.roll(array, -1, axis=1)
     ) / 4.0
 
+    # diagonal blur if enabled
+    if diagonal_blur:
+        blurred += (
+            np.roll(np.roll(array, 1, axis=0), 1, axis=1)
+            + np.roll(np.roll(array, -1, axis=0), -1, axis=1)
+        ) / 6.0
+
     result = array * (1.0 - edge_mask) + blurred * edge_mask
     result = np.clip(result, 0, 255).astype(np.uint8)
 
@@ -58,9 +69,13 @@ def fxaa(
 
 
 def fxaa_hq(
-    surf: pg.Surface, threshold: Union[int, float] = 10, f4: bool = True
+    surf: pg.Surface,
+    threshold: Union[int, float] = 10,
+    diagonal_blur: bool = True,
+    f4: bool = True,
 ) -> pg.Surface:
     """
+    :param diagonal_blur: bool
     :param threshold: flaot or int
     :param surf: pygame.Surface:
     :param f4: bool:
@@ -92,6 +107,13 @@ def fxaa_hq(
         + np.roll(array, -1, axis=1)
     ) / 4.0
 
+    # diagonal blur if enabled
+    if diagonal_blur:
+        blurred += (
+            np.roll(np.roll(array, 1, axis=0), 1, axis=1)
+            + np.roll(np.roll(array, -1, axis=0), -1, axis=1)
+        ) / 6.0
+
     result = array * (1.0 - edge_mask) + blurred * edge_mask
     result = np.clip(result, 0, 255).astype(np.uint8)
 
@@ -99,9 +121,13 @@ def fxaa_hq(
 
 
 def fxaa311(
-    surf: pg.Surface, threshold: Union[int, float] = 0.05, f4: bool = False
+    surf: pg.Surface,
+    threshold: Union[int, float] = 0.05,
+    diagonal_blur: bool = True,
+    f4: bool = False,
 ) -> pg.Surface:
     """
+    :param diagonal_blur: bool
     :param threshold: float or int
     :param surf: pygame.Surface:
     :param f4: bool:
@@ -142,6 +168,13 @@ def fxaa311(
         + np.roll(array, 1, axis=1)
         + np.roll(array, -1, axis=1)
     ) / 4.0
+
+    # diagonal blur if enabled
+    if diagonal_blur:
+        blurred += (
+            np.roll(np.roll(array, 1, axis=0), 1, axis=1)
+            + np.roll(np.roll(array, -1, axis=0), -1, axis=1)
+        ) / 6.0
 
     result = array * (1.0 - edge_mask) + blurred * edge_mask
     result = np.clip(result, 0, 255).astype(np.uint8)

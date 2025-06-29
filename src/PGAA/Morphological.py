@@ -1,5 +1,7 @@
 """
 Functions for applying various forms of Morphological Anti-Aliasing (MLAA) to Pygame-CE surfaces.
+
+MLAA is a post-processing anti-aliasing technique that was invented by Alexander Reshetov.
 """
 
 import pygame as pg
