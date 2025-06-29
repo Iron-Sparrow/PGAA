@@ -7,6 +7,16 @@ import pygame as pg
 import numpy as np
 from typing import Union, Literal
 
+assert getattr(pg, "IS_CE", False), (
+    "This module is designed to work with Pygame-CE (Pygame Community Edition) only."
+)
+
+if __debug__:
+    print(
+        "Using Jimenez's MLAA algorithm is strongly discouraged for SMAA is the successor with better results."
+        "Please, import SMAA from SubpixelMorphological."
+    )
+
 
 def jimenez_mlaa(
     surf: pg.Surface,
