@@ -141,50 +141,38 @@ def jimenez_mlaa(
 
 def jimenez_mlaa_low(
     surf: pg.Surface,
-    threshold: Union[float, int] = 30,
-    max_search: int = 4,
     f4: bool = False,
 ) -> pg.Surface:
     """
     :param surf: pygame.Surface:
-    :param threshold: float or int:
-    :param max_search: int:
     :param f4: bool:
     :return: pygame.Surface:
     """
-    return jimenez_mlaa(surf, threshold, max_search, f4)
+    return jimenez_mlaa(surf, 30, 4, f4)
 
 
 def jimenez_mlaa_high(
     surf: pg.Surface,
-    threshold: Union[float, int] = 10,
-    max_search: int = 16,
     f4: bool = True,
 ) -> pg.Surface:
     """
     :param surf: pygame.Surface:
-    :param threshold: float or int:
-    :param max_search: int:
     :param f4: bool:
     :return: pygame.Surface:
     """
-    return jimenez_mlaa(surf, threshold, max_search, f4)
+    return jimenez_mlaa(surf, 10, 16, f4)
 
 
 def jimenez_mlaa_very_high(
     surf: pg.Surface,
-    threshold: Union[float, int] = 5,
-    max_search: int = 32,
     f4: bool = True,
 ) -> pg.Surface:
     """
     :param surf: pygame.Surface:
-    :param threshold: float or int:
-    :param max_search: int:
     :param f4: bool:
     :return: pygame.Surface:
     """
-    return jimenez_mlaa(surf, threshold, max_search, f4)
+    return jimenez_mlaa(surf, 5, 32, f4)
 
 
 # Aliases
