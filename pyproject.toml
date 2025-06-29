@@ -19,7 +19,7 @@ classifiers = [
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
-    "Development Status :: 3 - Alpha",
+    "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
     "Topic :: Software Development :: Libraries :: pygame",
     "Topic :: Games/Entertainment",
@@ -28,7 +28,7 @@ classifiers = [
 requires-python = ">=3.9"
 dependencies = [
     "pygame-ce >=2.4.0, <3",
-    "numpy >= 1.24.1, <2.4"
+    "numpy >= 1.24.1, <2.5"
 ]
 #license = "IronSparrow License - June 2025 - License Version 1 (revision 3)"
 license-files = ["LICEN[CS]E*"]
