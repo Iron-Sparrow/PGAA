@@ -129,5 +129,59 @@ def jimenez_mlaa(
     return pg.surfarray.make_surface(result)
 
 
+def jimenez_mlaa_low(
+    surf: pg.Surface,
+    threshold: Union[float, int] = 30,
+    max_search: int = 4,
+    f4: bool = False,
+) -> pg.Surface:
+    """
+    :param surf: pygame.Surface:
+    :param threshold: float or int:
+    :param max_search: int:
+    :param f4: bool:
+    :return: pygame.Surface:
+    """
+    return jimenez_mlaa(surf, threshold, max_search, f4)
+
+
+def jimenez_mlaa_high(
+    surf: pg.Surface,
+    threshold: Union[float, int] = 10,
+    max_search: int = 16,
+    f4: bool = True,
+) -> pg.Surface:
+    """
+    :param surf: pygame.Surface:
+    :param threshold: float or int:
+    :param max_search: int:
+    :param f4: bool:
+    :return: pygame.Surface:
+    """
+    return jimenez_mlaa(surf, threshold, max_search, f4)
+
+
+def jimenez_mlaa_very_high(
+    surf: pg.Surface,
+    threshold: Union[float, int] = 5,
+    max_search: int = 32,
+    f4: bool = True,
+) -> pg.Surface:
+    """
+    :param surf: pygame.Surface:
+    :param threshold: float or int:
+    :param max_search: int:
+    :param f4: bool:
+    :return: pygame.Surface:
+    """
+    return jimenez_mlaa(surf, threshold, max_search, f4)
+
+
 # Aliases
-smaa15 = jimenez_mlaa
+smaa15_default = jimenez_default = jimenez_mlaa_default = smaa15 = (
+    jimenez_mlaa_medium
+) = jimenez_medium = jimenez_mq = jimenez_medium_quality = (
+    jimenez_mlaa_medium_quality
+) = jimenez_mlaa_mq = jimenez_mlaa
+smaa15_high = jimenez_high = jimenez_mlaa_high
+smaa15_very_high = jimenez_very_high = jimenez_mlaa_very_high
