@@ -45,6 +45,15 @@ To check out the documentation for Jimenez's MLAA, see [Jimenez.md](../docs/Jime
 
 To check out the documentation for MLAA, see [Morphological.md](../docs/Morphological.md).
 
+### ScharrNFAA (Scharr Normal Filter Anti-Aliasing)
+> [!NOTE]
+> It was added in **3.0.0**.
+
+### SMAA (Subpixel Morphological Anti-Aliasing)
+> [!NOTE]
+> It was added in **3.0.0**.
+
+
 ### SSAA (Super Sample Anti-Aliasing)
 > [!TIP]
 > SSAA was implemented as the first algorith and doesn't require Numpy to run.

@@ -8,7 +8,7 @@
 
 License Copyright © 2023-2025 -- IronSparrow (written by LittleBread69)
 
-Project Copyright © {InputDate} -- {IronSparrow, Adam Kudelas}
+Project Copyright © 2025 -- IronSparrow, Adam Kudelas
 
 **THE SOFTWARE/CODE IS PROVIDED "AS IS".  The authors don't take any responsibility for what this software is used for. Authors aren't responsible for any damages and or consequences that might occur by the use of the software - USE AT YOUR OWN RISK. Anything that is written implicitly cannot be used against the authors/software/project. Please refer to the list below stating what is allowed and what is forbidden. Anything not written in the allowed section isn't allowed unless the author specifies it. (Feel free to ask the authors, but don't expect an answer.)**
 This applies to AI too, notably when writing "anyone".
