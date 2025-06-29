@@ -1,3 +1,4 @@
+# encoding: utf-8
 """
 Functions for applying various forms of Morphological Anti-Aliasing (MLAA) to Pygame-CE surfaces.
 

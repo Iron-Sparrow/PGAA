@@ -1,3 +1,4 @@
+# encoding: utf-8
 """
 Functions for applying various forms of Super Sampling Anti-Aliasing (SSAA) to surfaces.
 Due to the nature of SSAA, it is expected that the performances will be lower than without any form of anti-aliasing.

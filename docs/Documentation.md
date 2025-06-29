@@ -52,4 +52,7 @@ To check out the documentation for MLAA, see [Morphological.md](../docs/Morpholo
 > [!NOTE]
 > It was added in **0.1.0**.
 
+> [!NOTE]
+> The implementation of SSAA in PGAA isn't necessarily proper SSAA, as SuperSampling is quite a broad term, but for PGAA, it is rather a Fullscreen upscaling Anti-Aliasing.
+
 To check out the documentation for SSAA, see [SuperSampling.md](../docs/SuperSampling.md).

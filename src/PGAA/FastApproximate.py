@@ -1,3 +1,4 @@
+# encoding: utf-8
 """
 Various functions for applying Fast Approximate Anti-Aliasing (FXAA) to Pygame-CE surfaces.
 

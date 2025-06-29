@@ -1,3 +1,4 @@
+# encoding: utf-8
 """
 Jimenez's MLAA is the precursor to the Subpixel Morphological Antialiasing (SMAA) algorithm.
 It was built atop of Reshetov's MLAA algorithm.
@@ -20,8 +21,8 @@ if __debug__:
 
 def jimenez_mlaa(
     surf: pg.Surface,
-    threshold: Union[float, int] = 20,
-    max_search: int = 8,
+    threshold: Union[float, int],
+    max_search: int,
     f4: bool = False,
 ) -> pg.Surface:
     """
@@ -151,6 +152,15 @@ def jimenez_mlaa_low(
     return jimenez_mlaa(surf, 30, 4, f4)
 
 
+def jimenez_mlaa_medium(surf, f4: bool = False) -> pg.Surface:
+    """
+    :param surf: pygame.Surface:
+    :param f4: bool:
+    :return: pygame.Surface:
+    """
+    return jimenez_mlaa(surf, 20, 8, f4)
+
+
 def jimenez_mlaa_high(
     surf: pg.Surface,
     f4: bool = True,
@@ -177,10 +187,10 @@ def jimenez_mlaa_very_high(
 
 # Aliases
 smaa15_default = smaa15_mq = jimenez_default = jimenez_mlaa_default = (
-    smaa15
-) = jimenez_mlaa_medium = jimenez_medium = jimenez_mq = (
-    jimenez_medium_quality
-) = jimenez_mlaa_medium_quality = jimenez_mlaa_mq = jimenez_mlaa
+    jimenez_medium
+) = jimenez_mq = jimenez_medium_quality = jimenez_mlaa_medium_quality = (
+    jimenez_mlaa_mq
+) = jimenez_mlaa_medium
 smaa15_high = smaa15_hq = jimenez_high = jimenez_high_quality = (
     jimenez_mlaa_high_quality
 ) = jimenez_hq = jimenez_mlaa_hq = jimenez_mlaa_high
