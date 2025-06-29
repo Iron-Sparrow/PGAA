@@ -2,10 +2,10 @@
 
 ## What is Jimenez's MLAA?
 
-Jimenez's MLAA is a variant of Reshetov's MLAA. Nowadays, we consider MLAA to be Reshetov's version while's Jimenez's variant has been abandoned in the favor of its continuation: SMAA.\
+Jimenez's MLAA is a variant of Reshetov's MLAA. Nowadays, we consider MLAA to be Reshetov's version while Jimenez's variant has been abandoned in favor of its continuation: SMAA.\
 Jimenez's MLAA is a modification and upgrade of the original MLAA algorithm and can nowadays be found in the [SMAA Github Repository](https://github.com/iryoku/smaa/tree/master) for the version [1.3](https://github.com/iryoku/smaa/tree/v1.3), [1.4](https://github.com/iryoku/smaa/tree/v1.4), [1.5](https://github.com/iryoku/smaa/tree/v1.5).
 
-If you want more informations, check out [MLAA on iryoku.com](https://www.iryoku.com/mlaa/) and [SMAA on iryoku.com](https://www.iryoku.com/smaa/).
+If you want more information, check out [MLAA on iryoku.com](https://www.iryoku.com/mlaa/) and [SMAA on iryoku.com](https://www.iryoku.com/smaa/).
 
 ## Usage in code
 
