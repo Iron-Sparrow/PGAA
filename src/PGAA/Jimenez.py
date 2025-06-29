@@ -178,10 +178,16 @@ def jimenez_mlaa_very_high(
 
 
 # Aliases
-smaa15_default = jimenez_default = jimenez_mlaa_default = smaa15 = (
-    jimenez_mlaa_medium
-) = jimenez_medium = jimenez_mq = jimenez_medium_quality = (
-    jimenez_mlaa_medium_quality
-) = jimenez_mlaa_mq = jimenez_mlaa
-smaa15_high = jimenez_high = jimenez_mlaa_high
-smaa15_very_high = jimenez_very_high = jimenez_mlaa_very_high
+smaa15_default = smaa15_mq = jimenez_default = jimenez_mlaa_default = (
+    smaa15
+) = jimenez_mlaa_medium = jimenez_medium = jimenez_mq = (
+    jimenez_medium_quality
+) = jimenez_mlaa_medium_quality = jimenez_mlaa_mq = jimenez_mlaa
+smaa15_high = smaa15_hq = jimenez_high = jimenez_high_quality = (
+    jimenez_mlaa_high_quality
+) = jimenez_hq = jimenez_mlaa_hq = jimenez_mlaa_high
+smaa15_very_high = smaa15_very_hq = smaa15_very_high_quality = smaa15_vhq = (
+    jimenez_very_high
+) = jimenez_very_hq = jimenez_very_high_quality = (
+    jimenez_mlaa_very_high_quality
+) = jimenez_mlaa_vhq = jimenez_mlaa_very_hq = jimenez_mlaa_very_high
