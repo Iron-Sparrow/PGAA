@@ -2,8 +2,6 @@
 
 """Scharr Normal Filter Anti-Aliasing for Pygame-CE surfaces."""
 
-from numpy.conftest import dtype
-
 import pygame as pg
 import numpy as np
 
