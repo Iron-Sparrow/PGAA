@@ -5,4 +5,7 @@ __version__ = "3.0.0rc1"
 
 import pygame as pg
 
-assert pg.get_init()
+assert pg.get_init(), (
+    "Pygame must be initialized before using this module. "
+    "Please call `pg.init()` before importing PGAA."
+)
