@@ -3,3 +3,5 @@
 ## What is SMAA?
 
 `...`
+
+### TODO: Documentation

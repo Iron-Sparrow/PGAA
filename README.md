@@ -1,7 +1,7 @@
 # PGAA - Pygame-CE Anti-Aliasing
 
 [![CodeQL](https://github.com/Iron-Sparrow/PGAA/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/Iron-Sparrow/PGAA/actions/workflows/github-code-scanning/codeql)
-![PyPi Version](https://img.shields.io/pypi/v/pgaa.svg?v=1)
+![PyPi Stable Version](https://img.shields.io/pypi/v/pgaa.svg?v=1)
 [![Upload Python Package](https://github.com/Iron-Sparrow/PGAA/actions/workflows/python-publish.yml/badge.svg)](https://github.com/Iron-Sparrow/PGAA/actions/workflows/python-publish.yml)
 [![Test Package Compatibility on Ubuntu (x64)](https://github.com/Iron-Sparrow/PGAA/actions/workflows/test_ubuntu.yml/badge.svg?branch=main)](https://github.com/Iron-Sparrow/PGAA/actions/workflows/test_ubuntu.yml)
 [![Test Package Compatibility on Windows (x64)](https://github.com/Iron-Sparrow/PGAA/actions/workflows/test_windows.yml/badge.svg)](https://github.com/Iron-Sparrow/PGAA/actions/workflows/test_windows.yml)
