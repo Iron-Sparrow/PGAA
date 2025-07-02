@@ -133,3 +133,23 @@ def smaa_very_high(surf: pg.Surface, f4: bool = True) -> pg.Surface:
 
 def smaa_ultra(surf: pg.Surface, f4: bool = True) -> pg.Surface:
     return smaa(surf, 0.0125, 32, 256, f4)
+
+
+# Aliases
+smaa_lq = smaa28_low = smaa28_lq = smaa_low_quality = smaa28_low_quality = (
+    smaa_low
+)
+smaa_default = smaa28_default = smaa_mq = smaa28_medium = smaa28_mq = (
+    smaa_medium_quality
+) = smaa28_medium_quality = smaa_medium
+smaa_hq = smaa28_high = smaa28_hq = smaa_high_quality = (
+    smaa28_high_quality
+) = smaa_high
+smaa_vhq = smaa28_very_high = smaa28_vhq = smaa_very_high_quality = (
+    smaa28_very_high_quality
+) = smaa28_very_hq = smaa_very_hq = smaa_very_high
+smaa_uhq = smaa28_ultra = smaa_ultra_high_quality = (
+    smaa28_ultra_high_quality
+) = smaa28_uhq = smaa_ultra_quality = smaa28_ultra_quality = (
+    smaa28_ultra_hq
+) = smaa_ultra_hq = smaa_ultra

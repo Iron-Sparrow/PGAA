@@ -80,3 +80,33 @@ def scharr_nfaa(
     result = np.clip(result, 0, 255).astype(np.uint8)
 
     return pg.surfarray.make_surface(result)
+
+
+def scharr_nfaa_low(surf: pg.Surface, f4: bool = False) -> pg.Surface:
+    return scharr_nfaa(surf, 0.2, 0.3, f4)
+
+
+def scharr_nfaa_medium(surf: pg.Surface, f4: bool = False) -> pg.Surface:
+    return scharr_nfaa(surf, 0.1, 0.6, f4)
+
+
+def scharr_nfaa_high(surf: pg.Surface, f4: bool = True) -> pg.Surface:
+    return scharr_nfaa(surf, 0.05, 0.85, f4)
+
+
+# very high quality is simply replaced with ultra for simpler syntax and linguistics
+
+
+def scharr_nfaa_ultra(surf: pg.Surface, f4: bool = True) -> pg.Surface:
+    return scharr_nfaa(surf, 0.025, 1.0, f4)
+
+
+# Aliases
+scharr_nfaa_lq = scharr_nfaa_low_quality = scharr_nfaa_low
+scharr_nfaa_default = scharr_nfaa_mq = scharr_nfaa_medium_quality = (
+    scharr_nfaa_medium
+)
+scharr_nfaa_high_quality = scharr_nfaa_hq = scharr_nfaa_high
+scharr_nfaa_ultra_quality = scharr_nfaa_ultra_high_quality = (
+    scharr_nfaa_uq
+) = scharr_nfaa_uhq = scharr_nfaa_ultra

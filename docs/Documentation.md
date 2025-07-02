@@ -49,6 +49,9 @@ To check out the documentation for MLAA, see [Morphological.md](../docs/Morpholo
 > [!NOTE]
 > It was added in **3.0.0**.
 
+> [!WARNING] 
+> ScharrNFAA requires Numpy to run.
+
 ### SMAA (Subpixel Morphological Anti-Aliasing)
 > [!NOTE]
 > It was added in **3.0.0**.
