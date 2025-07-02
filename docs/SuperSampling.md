@@ -9,7 +9,7 @@ The downside to SSAA is that it is very resource-intensive, as it requires eithe
 
 To use SSAA in your code, you need to import Supersampling from the PGAA package.
 
-```
+```python
 from PGAA import SuperSampling as SSAA
 ```
 
@@ -35,7 +35,7 @@ Thanks to the optimised algorith found in [pygame-ce](https://pyga.me/docs/ref/t
 
 `ssaa05_hq(surf)` where `surf` is a Pygame-CE surface and where the function returns a new surface with the smooth anti-aliasing applied.
 
-> [!NOTE] 
+> [!NOTE]
 > Added in **0.1.0**.
 
 > [!WARNING]
@@ -43,14 +43,14 @@ Thanks to the optimised algorith found in [pygame-ce](https://pyga.me/docs/ref/t
 
 ### SSAA0.5x LQ
 
-`ssaa05_lq(surf)` where `surf` is a Pygame-CE surface and where it returns a new surface with anti-aliasing applied. It doesn't use the algorithm used in ssa05, but rather the default (faster but less good-looking one). More info on [here.](https://pyga.me/docs/ref/transform.html#pygame.transform.scale)
+`ssaa05_lq(surf)` where `surf` is a Pygame-CE surface and where it returns a new surface with anti-aliasing applied. It doesn't use the algorithm used in ssa05, but rather the default (faster but less good-looking one). More info in [the pygame-ce transform documentation.](https://pyga.me/docs/ref/transform.html#pygame.transform.scale)
 
 > [!NOTE]
 > Added in **0.2.2**.
 
 > [!WARNING]
 > Change from `aa05_lq` to `ssaa05_lq` in **0.3.1**.
- 
+
 ### SSAA2x
 
 `ssaa2(surf)` where `surf` is a Pygame-CE surface and where it returns a new surface with anti-aliasing applied. This functions uses the high quality [2x upscaling algorithm](https://pyga.me/docs/ref/transform.html#pygame.transform.scale2x) but uses the fast downscaling algorithm. It is suggested to use the High Quality version of this function for better results.
@@ -157,63 +157,80 @@ PGAA provides aliases for the functions to make it easier to use them.\
 Here are the aliases:
 > [!NOTE]
 > Added in **1.0.1**:
- + `ssaa05`:
-   + `ssaa_05`
-   + `ssaa_05x`
-   + `ssaa05x`
- + `ssaa05_hq`:
-   + `ssaa_05_hq`
-   + `ssaa_05x_hq`
-   + `ssaa05x_hq`
- + `ssaa05_lq`:
-   + `ssaa_05_lq`
-   + `ssaa_05x_lq`
-   + `ssaa05x_lq`
- + `ssaa2`:
-   + `ssaa_2`
-   + `ssaa_2x`
-   + `ssaa2x`
- + `ssaa2_hq`:
-    + `ssaa_2_hq`
-    + `ssaa_2x_hq`
-    + `ssaa2x_hq`
-    + `ssaa_default`
- + `ssaa2_lq`:
-    + `ssaa_2_lq`
-    + `ssaa_2x_lq`
-    + `ssaa2x_lq`
- + `ssaa4`:
-   + `ssaa_4`
-   + `ssaa_4x`
-   + `ssaa4x`
- + `ssaa4_hq`:
-   + `ssaa_4_hq`
-   + `ssaa_4x_hq`
-   + `ssaa4x_hq`
- + `ssaa8`:
-   + `ssaa_8`
-   + `ssaa_8x`
-   + `ssaa8x`
- + `ssaa8_hq`:
-   + `ssaa_8_hq`
-   + `ssaa_8x_hq`
-   + `ssaa8x_hq`
- + `ssaa32`:
-   + `ssaa_32`
-   + `ssaa_32x`
-   + `ssaa32x`
- + `ssaa_lq`:
-   + `ssaa_low`
- + `ssaa_hq`:
-   + `ssaa_high`
+
++ `ssaa05`:
+  + `ssaa_05`
+  + `ssaa_05x`
+  + `ssaa05x`
+
++ `ssaa05_hq`:
+  + `ssaa_05_hq`
+  + `ssaa_05x_hq`
+  + `ssaa05x_hq`
+
++ `ssaa05_lq`:
+  + `ssaa_05_lq`
+  + `ssaa_05x_lq`
+  + `ssaa05x_lq`
+
++ `ssaa2`:
+  + `ssaa_2`
+  + `ssaa_2x`
+  + `ssaa2x`
+
++ `ssaa2_hq`:
+  + `ssaa_2_hq`
+  + `ssaa_2x_hq`
+  + `ssaa2x_hq`
+  + `ssaa_default`
+
++ `ssaa2_lq`:
+  + `ssaa_2_lq`
+  + `ssaa_2x_lq`
+  + `ssaa2x_lq`
+
++ `ssaa4`:
+  + `ssaa_4`
+  + `ssaa_4x`
+  + `ssaa4x`
+
++ `ssaa4_hq`:
+  + `ssaa_4_hq`
+  + `ssaa_4x_hq`
+  + `ssaa4x_hq`
+
++ `ssaa8`:
+  + `ssaa_8`
+  + `ssaa_8x`
+  + `ssaa8x`
+
++ `ssaa8_hq`:
+  + `ssaa_8_hq`
+  + `ssaa_8x_hq`
+  + `ssaa8x_hq`
+
++ `ssaa32`:
+  + `ssaa_32`
+  + `ssaa_32x`
+  + `ssaa32x`
+
++ `ssaa_lq`:
+  + `ssaa_low`
+
++ `ssaa_hq`:
+  + `ssaa_high`
+
 > [!NOTE]
 > Added in **1.0.2**:
- + `ssaa_lq`:
-   + `ssaa_low_quality` 
- + `ssaa_hq`:
-   + `ssaa_high_quality`
- + `ssaa32`:
-   + `ssaa32_hq`
-   + `ssaa_32_hq`
-   + `ssaa32x_hq`
-   + `ssaa_32x_hq`
+
++ `ssaa_lq`:
+  + `ssaa_low_quality`
+
++ `ssaa_hq`:
+  + `ssaa_high_quality`
+
++ `ssaa32`:
+  + `ssaa32_hq`
+  + `ssaa_32_hq`
+  + `ssaa32x_hq`
+  + `ssaa_32x_hq`

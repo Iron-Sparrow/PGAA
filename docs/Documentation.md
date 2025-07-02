@@ -16,10 +16,9 @@ PGAA is a Python Package that provides multiple forms of anti-aliasing for [Pyga
 > It was added in **2.0.0**.
 
 > [!WARNING]
-> FXAA requires Numpy to run. 
+> FXAA requires Numpy to run.
 
 To check out the documentation for FXAA, see [FastApproximate.md](../docs/FastApproximate.md)
-
 
 ### Jimenez's MLAA (Jimenez Morphological Anti-Aliasing)
 
@@ -34,7 +33,6 @@ To check out the documentation for FXAA, see [FastApproximate.md](../docs/FastAp
 
 To check out the documentation for Jimenez's MLAA, see [Jimenez.md](../docs/Jimenez.md).
 
-
 ### MLAA (Morphological Anti-Aliasing)
 
 > [!NOTE]
@@ -46,18 +44,20 @@ To check out the documentation for Jimenez's MLAA, see [Jimenez.md](../docs/Jime
 To check out the documentation for MLAA, see [Morphological.md](../docs/Morphological.md).
 
 ### ScharrNFAA (Scharr Normal Filter Anti-Aliasing)
+
 > [!NOTE]
 > It was added in **3.0.0**.
 
-> [!WARNING] 
+> [!WARNING]
 > ScharrNFAA requires Numpy to run.
 
 ### SMAA (Subpixel Morphological Anti-Aliasing)
+
 > [!NOTE]
 > It was added in **3.0.0**.
 
-
 ### SSAA (Super Sample Anti-Aliasing)
+
 > [!TIP]
 > SSAA was implemented as the first algorith and doesn't require Numpy to run.
 
