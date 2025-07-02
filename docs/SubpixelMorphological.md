@@ -4,4 +4,16 @@
 
 `...`
 
-### TODO: Documentation
+## Usage in code
+
+```python
+from PGAA import SubpixelMorphological as SMAA
+```
+
+## Functions
+
+`...`
+
+## Aliases
+
+`...`

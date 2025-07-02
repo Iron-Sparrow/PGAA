@@ -56,6 +56,9 @@ To check out the documentation for MLAA, see [Morphological.md](../docs/Morpholo
 > [!NOTE]
 > It was added in **3.0.0**.
 
+> [!WARNING]
+> SMAA requires Numpy to run.
+
 ### SSAA (Super Sample Anti-Aliasing)
 
 > [!TIP]

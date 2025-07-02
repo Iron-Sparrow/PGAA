@@ -9,5 +9,13 @@ FXAA, or Fast Approximate Anti-Aliasing, is an anti-aliasing technique invented 
 To use FXAA in your code, you need to import FastApproximate from the PGAA package.
 
 ```python
-from PGAA immport FastApproximate as FXAA
+from PGAA import FastApproximate as FXAA
 ```
+
+## Functions
+
+`...`
+
+## Aliases
+
+`...`
