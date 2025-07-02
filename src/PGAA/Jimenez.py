@@ -26,6 +26,7 @@ def jimenez_mlaa(
     f4: bool = False,
 ) -> pg.Surface:
     """
+    Applies Jimenez-MLAA to the given surface and returns a new surface with anti-aliasing applied.
     :param surf: pygame.Surface:
     :param threshold: float or int:
     :param max_search: int:
@@ -145,6 +146,7 @@ def jimenez_mlaa_low(
     f4: bool = False,
 ) -> pg.Surface:
     """
+    Wrapper for the low quality Jimenez-MLAA.
     :param surf: pygame.Surface:
     :param f4: bool:
     :return: pygame.Surface:
@@ -154,6 +156,7 @@ def jimenez_mlaa_low(
 
 def jimenez_mlaa_medium(surf, f4: bool = False) -> pg.Surface:
     """
+    Wrapper for the medium quality Jimenez-MLAA.
     :param surf: pygame.Surface:
     :param f4: bool:
     :return: pygame.Surface:
@@ -166,6 +169,7 @@ def jimenez_mlaa_high(
     f4: bool = True,
 ) -> pg.Surface:
     """
+    Wrapper for the high quality Jimenez-MLAA.
     :param surf: pygame.Surface:
     :param f4: bool:
     :return: pygame.Surface:
@@ -178,6 +182,7 @@ def jimenez_mlaa_very_high(
     f4: bool = True,
 ) -> pg.Surface:
     """
+    Wrapper for the very high quality Jimenez-MLAA.
     :param surf: pygame.Surface:
     :param f4: bool:
     :return: pygame.Surface:

@@ -9,6 +9,19 @@ import numpy as np
 def scharr_nfaa(
     surf: pg.Surface, threshold: float, strength: float, f4: bool = False
 ) -> pg.Surface:
+    """
+    Applies Scharr's Normal Map and the uses it to perform Normal Filter Anti-Aliasing.
+    :param surf: pygame.Surface:
+    :param threshold: float:
+    :param strength: float:
+    :param f4: bool:
+    :return: pygame.Surface:
+    """
+    assert isinstance(surf, pg.Surface)
+    assert isinstance(threshold, float) and threshold >= 0
+    assert 0 <= strength <= 1 and isinstance(strength, float)
+    assert isinstance(f4, bool)
+
     array = pg.surfarray.array3d(surf).astype(
         np.float32 if not f4 else np.float64
     )
@@ -38,6 +51,11 @@ def scharr_nfaa(
     )
 
     def convolve2d(img, kernel):
+        """
+        :param img:
+        :param kernel:
+        :return:
+        """
         out = np.zeros_like(img)
         padded = np.pad(img, 1, mode="edge")
         for y in range(h):
@@ -83,14 +101,29 @@ def scharr_nfaa(
 
 
 def scharr_nfaa_low(surf: pg.Surface, f4: bool = False) -> pg.Surface:
+    """
+    :param surf:
+    :param f4:
+    :return:
+    """
     return scharr_nfaa(surf, 0.2, 0.3, f4)
 
 
 def scharr_nfaa_medium(surf: pg.Surface, f4: bool = False) -> pg.Surface:
+    """
+    :param surf:
+    :param f4:
+    :return:
+    """
     return scharr_nfaa(surf, 0.1, 0.6, f4)
 
 
 def scharr_nfaa_high(surf: pg.Surface, f4: bool = True) -> pg.Surface:
+    """
+    :param surf:
+    :param f4:
+    :return:
+    """
     return scharr_nfaa(surf, 0.05, 0.85, f4)
 
 
@@ -98,6 +131,11 @@ def scharr_nfaa_high(surf: pg.Surface, f4: bool = True) -> pg.Surface:
 
 
 def scharr_nfaa_ultra(surf: pg.Surface, f4: bool = True) -> pg.Surface:
+    """
+    :param surf:
+    :param f4:
+    :return:
+    """
     return scharr_nfaa(surf, 0.025, 1.0, f4)
 
 

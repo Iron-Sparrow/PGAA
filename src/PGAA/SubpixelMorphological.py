@@ -116,22 +116,47 @@ def smaa(
 
 
 def smaa_low(surf: pg.Surface, f4: bool = False) -> pg.Surface:
+    """
+    :param surf: pygame.Surface:
+    :param f4: bool:
+    :return: pygame.Surface:
+    """
     return smaa(surf, 0.2, 4, 16, f4)
 
 
 def smaa_medium(surf: pg.Surface, f4: bool = False) -> pg.Surface:
+    """
+    :param surf: pygame.Surface:
+    :param f4: bool:
+    :return: pygame.Surface:
+    """
     return smaa(surf, 0.1, 8, 32, f4)
 
 
 def smaa_high(surf: pg.Surface, f4: bool = True) -> pg.Surface:
+    """
+    :param surf: pygame.Surface:
+    :param f4: bool:
+    :return: pygame.Surface:
+    """
     return smaa(surf, 0.05, 16, 48, f4)
 
 
 def smaa_very_high(surf: pg.Surface, f4: bool = True) -> pg.Surface:
+    """
+    :param surf: pygame.Surface:
+    :param f4: bool:
+    :return: pygame.Surface:
+    """
     return smaa(surf, 0.03, 24, 64, f4)
 
 
 def smaa_ultra(surf: pg.Surface, f4: bool = True) -> pg.Surface:
+    """
+    :param surf: pygame.Surface:
+    :param f4: bool:
+    :return: pygame.Surface:
+    """
     return smaa(surf, 0.0125, 32, 256, f4)
 
 
