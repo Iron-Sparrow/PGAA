@@ -65,6 +65,7 @@ PGAA provides aliases for the MLAA functions to make them easier to use. The ali
 
 > [!NOTE]
 > Added in **1.0.0**.
+
 + `mlaa_low`:
   + `mlaa_lq`
 + `mlaa_medium`:
