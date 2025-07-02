@@ -36,4 +36,4 @@ jobs:
 
       - name: Import PGAA
         run: |
-          python -c "import PGAA; print(PGAA.__version__)"
+          python -c "import pygame; pygame.init(); import PGAA; print(PGAA.__version__)"
