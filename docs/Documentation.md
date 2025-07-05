@@ -51,6 +51,8 @@ To check out the documentation for MLAA, see [Morphological.md](../docs/Morpholo
 > [!WARNING]
 > ScharrNFAA requires Numpy to run.
 
+To check out the documentation for ScharrNFAA, see [ScharrNormalFilter.md](../docs/ScharrNormalFilter.md).
+
 ### SMAA (Subpixel Morphological Anti-Aliasing)
 
 > [!NOTE]
@@ -58,6 +60,8 @@ To check out the documentation for MLAA, see [Morphological.md](../docs/Morpholo
 
 > [!WARNING]
 > SMAA requires Numpy to run.
+
+To check out the documentation for SMAA, see [SubpixelMorphological.md](../docs/SubpixelMorphological.md)
 
 ### SSAA (Super Sample Anti-Aliasing)
 
