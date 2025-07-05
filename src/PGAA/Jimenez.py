@@ -23,6 +23,7 @@ def jimenez_mlaa(
     surf: pg.Surface,
     threshold: Union[float, int],
     max_search: int,
+    luma: Literal["rec709", "rec601", "rec2100", "mean"] = "rec709",
     f4: bool = False,
 ) -> pg.Surface:
     """
@@ -44,21 +45,36 @@ def jimenez_mlaa(
     )
     h, w = array.shape[:2]
     # Compute accurate luminance (Rec. 709)
-    luma = (
-        array[..., 0] * 0.2126
-        + array[..., 1] * 0.7152
-        + array[..., 2] * 0.0722
-    )
+    if luma == "rec709":
+        luminance = (
+            array[..., 0] * 0.2126
+            + array[..., 1] * 0.7152
+            + array[..., 2] * 0.0722
+        )
+    elif luma == "rec601":
+        luminance = (
+            array[..., 0] * 0.299
+            + array[..., 1] * 0.587
+            + array[..., 2] * 0.114
+        )
+    elif luma == "rec2100":
+        luminance = (
+            array[..., 0] * 0.2627
+            + array[..., 1] * 0.6780
+            + array[..., 2] * 0.0593
+        )
+    else:
+        luminance = np.mean(array, axis=2)
 
     # Edge Detection booleans
-    e_h = np.abs(np.roll(luma, -1, axis=0) - luma) > threshold
-    e_v = np.abs(np.roll(luma, -1, axis=1) - luma) > threshold
+    e_h = np.abs(np.roll(luminance, -1, axis=0) - luminance) > threshold
+    e_v = np.abs(np.roll(luminance, -1, axis=1) - luminance) > threshold
     e_d1 = (
-        np.abs(np.roll(np.roll(luma, -1, axis=0), -1, axis=1) - luma)
+        np.abs(np.roll(np.roll(luminance, -1, axis=0), -1, axis=1) - luminance)
         > threshold
     )
     e_d2 = (
-        np.abs(np.roll(np.roll(luma, -1, axis=0), 1, axis=1) - luma)
+        np.abs(np.roll(np.roll(luminance, -1, axis=0), 1, axis=1) - luminance)
         > threshold
     )
 
@@ -151,7 +167,7 @@ def jimenez_mlaa_low(
     :param f4: bool:
     :return: pygame.Surface:
     """
-    return jimenez_mlaa(surf, 30, 4, f4)
+    return jimenez_mlaa(surf, 30, 4, 'rec709', f4)
 
 
 def jimenez_mlaa_medium(surf, f4: bool = False) -> pg.Surface:
@@ -161,7 +177,7 @@ def jimenez_mlaa_medium(surf, f4: bool = False) -> pg.Surface:
     :param f4: bool:
     :return: pygame.Surface:
     """
-    return jimenez_mlaa(surf, 20, 8, f4)
+    return jimenez_mlaa(surf, 20, 8, 'rec709',f4)
 
 
 def jimenez_mlaa_high(
@@ -174,7 +190,7 @@ def jimenez_mlaa_high(
     :param f4: bool:
     :return: pygame.Surface:
     """
-    return jimenez_mlaa(surf, 10, 16, f4)
+    return jimenez_mlaa(surf, 10, 16, 'rec709', f4)
 
 
 def jimenez_mlaa_very_high(
@@ -187,7 +203,7 @@ def jimenez_mlaa_very_high(
     :param f4: bool:
     :return: pygame.Surface:
     """
-    return jimenez_mlaa(surf, 5, 32, f4)
+    return jimenez_mlaa(surf, 5, 32, 'rec709', f4)
 
 
 # Aliases

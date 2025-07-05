@@ -20,26 +20,28 @@ from PGAA import FastApproximate as FXAA
 
 ### FXAA
 
-`fxaa(surf, threshold, diagonal_blur, f4)`, where `surf` is a Pygame-CE surface, `threshold` is a float or an int with a value strictly above `0`, `diagonal_blur` is a bool, and `f4` is a bool, is a function that returns a Pygame-CE surface with FXAA applied to it.
+`fxaa(surf, threshold, diagonal_blur, f4)`, where `surf` is a Pygame-CE surface, `threshold` is a float or an int with a value strictly above `0`, `diagonal_blur` is a bool, `luma` is a str, and `f4` is a bool, is a function that returns a Pygame-CE surface with FXAA applied to it.
 
-With `fxaa`, the default `threshold` value is `20` *(the lower the better quality, with too low causing blurring)*, the default `diagonal_blur` value is `False` *(diagonal_blur cause better results on jagged_edges especially diagonals with the cost of a slight performance decrease)*, the default `f4` value is `False` *(Increases floating point precision at the cost of higher memory usage)*.
+With `fxaa`, the default `threshold` value is `20` *(the lower the better quality, with too low causing blurring)*, the default `diagonal_blur` value is `False` *(diagonal_blur cause better results on jagged_edges especially diagonals with the cost of a slight performance decrease)*, the default `luma` value is `'mean'` *(It determines how the grayscale is calculated)*, the default `f4` value is `False` *(Increases floating point precision at the cost of higher memory usage)*.
 
 > [!NOTE]
 > Added in **2.0.1**.\
 > The kwarg `diagonal_blur` was added in **3.0.0**.
+> The kwarg `luma` was added in **3.1.0**.
 
 > [!NOTE]
 > While it is recommended to avoid changing the default values, fine-tuning might yield the highest performance-to-image-quality ratio.
 
 ### FXAA HQ
 
-`fxaa_hq(surf, threshold, diagonal_blur, f4)`, where `surf` is a Pygame-CE surface, `threshold` is a float or an int with a value strictly above `0`, `diagonal_blur` is a bool, and `f4` is a bool, is a function that returns a Pygame-CE surface with High Quality FXAA applied to it.
+`fxaa_hq(surf, threshold, diagonal_blur, f4)`, where `surf` is a Pygame-CE surface, `threshold` is a float or an int with a value strictly above `0`, `diagonal_blur` is a bool, `luma` is a str, and `f4` is a bool, is a function that returns a Pygame-CE surface with High Quality FXAA applied to it.
 
-With `fxaa_hq`, the default `threshold` value is `10` *(the lower the better quality, with too low causing blurring)*, the default `diagonal_blur` value is `True` *(diagonal_blur cause better results on jagged_edges especially diagonals with the cost of a slight performance decrease)*, the default `f4` value is `True` *(Increases floating point precision at the cost of higher memory usage)*.
+With `fxaa_hq`, the default `threshold` value is `10` *(the lower the better quality, with too low causing blurring)*, the default `diagonal_blur` value is `True` *(diagonal_blur cause better results on jagged_edges especially diagonals with the cost of a slight performance decrease)*, the default `luma` value is `'rec709'` *(It determines how the grayscale is calculated)*, the default `f4` value is `True` *(Increases floating point precision at the cost of higher memory usage)*.
 
 > [!NOTE]
 > Added in **2.0.1**.\
 > The kwarg `diagonal_blur` was added in **3.0.0**.
+> The kwarg `luma` was added in **3.1.0**.
 
 > [!IMPORTANT]
 > From **3.0.1** onwards, FXAA_HQ is a simply a modified version of `fxaa()` instead of its own function.
@@ -49,13 +51,16 @@ With `fxaa_hq`, the default `threshold` value is `10` *(the lower the better qua
 
 ### FXAA 3.11
 
-`fxaa311(surf, threshold, diagonal_blur, f4)` where `surf` is a Pygame-CE surface, `threshold` is a float with a value strictly above `0`, `diagonal_blur` is a bool, and `f4` is a bool, is a function that returns a Pygame-CE surface with FXAA_311 applied to it.
+`fxaa311(surf, threshold, diagonal_blur, f4)` where `surf` is a Pygame-CE surface, `threshold` is a float with a value strictly above `0`, `diagonal_blur` is a bool, `luma` is a str, and `f4` is a bool, is a function that returns a Pygame-CE surface with FXAA_311 applied to it.
+
+With `fxaa311`, the default `threshold` value is `0.05` *(the lower the better quality, with too low causing blurring)*, the default `diagonal_blur` value is `True` *(diagonal_blur cause better results on jagged_edges especially diagonals with the cost of a slight performance decrease)*, the default `luma` value is `'rec2100'` *(It determines how the grayscale is calculated)*, the default `f4` value is `True` *(Increases floating point precision at the cost of higher memory usage)*.
 
 Unlike the other FXAA functions, `fxaa311` is based on the more recent verison of FXAA — FXAA 3.11 — and thus has more advanced features, like adaptive thresholding and overall better quality.
 
 > [!NOTE]
 > Added in **2.0.1**.\
 > The kwarg `diagonal_blur` was added in **3.0.0**.
+> The kwarg `luma` was added in **3.1.0**.
 
 > [!NOTE]
 > While it is recommended to avoid changing the default values, fine-tuning might yield the highest performance-to-image-quality ratio.
