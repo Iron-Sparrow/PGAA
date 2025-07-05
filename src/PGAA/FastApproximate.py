@@ -85,6 +85,7 @@ def fxaa_hq(
     """
     return fxaa(surf, threshold, diagonal_blur, f4)
 
+
 def fxaa311(
     surf: pg.Surface,
     threshold: Union[int, float] = 0.05,
