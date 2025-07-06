@@ -4,10 +4,16 @@
 
 import pygame as pg
 import numpy as np
+from typing import Literal
+from ._common import compute_luma
 
 
 def scharr_nfaa(
-    surf: pg.Surface, threshold: float, strength: float, f4: bool = False
+    surf: pg.Surface,
+    threshold: float,
+    strength: float,
+    luma: Literal["rec601", "rec709", "rec2100", "mean"] = "rec709",
+    f4: bool = False,
 ) -> pg.Surface:
     """
     Applies Scharr's Normal Map and the uses it to perform Normal Filter Anti-Aliasing.
@@ -27,11 +33,7 @@ def scharr_nfaa(
     )
     h, w = array.shape[:2]
 
-    luma = (
-        array[..., 0] * 0.2126
-        + array[..., 1] * 0.7152
-        + array[..., 2] * 0.0722
-    )
+    luminance = compute_luma(array, luma)
 
     kx = np.array(
         [
@@ -64,8 +66,8 @@ def scharr_nfaa(
                 out[y, x] = np.sum(region * kernel)
         return out
 
-    dx = convolve2d(luma, kx)
-    dy = convolve2d(luma, ky)
+    dx = convolve2d(luminance, kx)
+    dy = convolve2d(luminance, ky)
 
     magnitude = np.sqrt(dx**2 + dy**2)
     norm = np.stack([-dy, dx], axis=-1)
@@ -106,7 +108,7 @@ def scharr_nfaa_low(surf: pg.Surface, f4: bool = False) -> pg.Surface:
     :param f4:
     :return:
     """
-    return scharr_nfaa(surf, 0.2, 0.3, f4)
+    return scharr_nfaa(surf, 0.2, 0.3, "rec709", f4)
 
 
 def scharr_nfaa_medium(surf: pg.Surface, f4: bool = False) -> pg.Surface:
@@ -115,7 +117,7 @@ def scharr_nfaa_medium(surf: pg.Surface, f4: bool = False) -> pg.Surface:
     :param f4:
     :return:
     """
-    return scharr_nfaa(surf, 0.1, 0.6, f4)
+    return scharr_nfaa(surf, 0.1, 0.6, "rec709", f4)
 
 
 def scharr_nfaa_high(surf: pg.Surface, f4: bool = True) -> pg.Surface:
@@ -124,7 +126,7 @@ def scharr_nfaa_high(surf: pg.Surface, f4: bool = True) -> pg.Surface:
     :param f4:
     :return:
     """
-    return scharr_nfaa(surf, 0.05, 0.85, f4)
+    return scharr_nfaa(surf, 0.05, 0.85, "rec709", f4)
 
 
 # very high quality is simply replaced with ultra for simpler syntax and linguistics
@@ -136,7 +138,7 @@ def scharr_nfaa_ultra(surf: pg.Surface, f4: bool = True) -> pg.Surface:
     :param f4:
     :return:
     """
-    return scharr_nfaa(surf, 0.025, 1.0, f4)
+    return scharr_nfaa(surf, 0.025, 1.0, "rec709", f4)
 
 
 # Aliases

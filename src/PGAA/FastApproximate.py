@@ -8,6 +8,7 @@ Due to the nature of FXAA, results may be perceived as blurry or soft.
 import pygame as pg
 import numpy as np
 from typing import Union, Literal
+from ._common import compute_luma
 
 assert getattr(pg, "IS_CE", False), (
     "This module is designed to work with Pygame-CE (Pygame Community Edition) only."
@@ -18,9 +19,7 @@ def fxaa(
     surf: pg.Surface,
     threshold: Union[int, float] = 20,
     diagonal_blur: bool = False,
-    luma: Literal[
-        "rec709", "rec601", "rec2020", "rec2100", "mean"
-    ] = "mean",
+    luma: Literal["rec709", "rec601", "rec2100", "mean"] = "mean",
     f4: bool = False,
 ) -> pg.Surface:
     """
@@ -34,12 +33,6 @@ def fxaa(
 
     assert isinstance(surf, pg.Surface)
     assert isinstance(threshold, (int, float))
-    assert isinstance(luma, str) and luma in (
-        "rec709",
-        "rec601",
-        "rec2100",
-        "mean",
-    )
     assert threshold > 0
     assert isinstance(f4, bool)
 
@@ -47,26 +40,7 @@ def fxaa(
         np.float32 if not f4 else np.float64
     )
 
-    if luma == "rec709":
-        gray = (
-            array[..., 0] * 0.2126
-            + array[..., 1] * 0.7152
-            + array[..., 2] * 0.0722
-        )
-    elif luma == "rec601":
-        gray = (
-            array[..., 0] * 0.299
-            + array[..., 1] * 0.587
-            + array[..., 2] * 0.114
-        )
-    elif luma == "rec2100":
-        gray = (
-            array[..., 0] * 0.2627
-            + array[..., 1] * 0.6780
-            + array[..., 2] * 0.0593
-        )
-    else:
-        gray = np.mean(array, axis=2)
+    gray = compute_luma(array, luma)
 
     dx = np.abs(np.roll(gray, -1, axis=0) - gray)
     dy = np.abs(np.roll(gray, -1, axis=1) - gray)
@@ -103,9 +77,7 @@ def fxaa_hq(
     surf: pg.Surface,
     threshold: Union[int, float] = 10,
     diagonal_blur: bool = True,
-    luma: Literal[
-        "rec709", "rec601", "rec2100", "mean"
-    ] = "rec709",
+    luma: Literal["rec709", "rec601", "rec2100", "mean"] = "rec709",
     f4: bool = True,
 ) -> pg.Surface:
     """
@@ -123,9 +95,7 @@ def fxaa311(
     surf: pg.Surface,
     threshold: Union[int, float] = 0.05,
     diagonal_blur: bool = True,
-    luma: Literal[
-        "rec709", "rec601", "rec2100", "mean"
-    ] = "rec2100",
+    luma: Literal["rec709", "rec601", "rec2100", "mean"] = "rec2100",
     f4: bool = False,
 ) -> pg.Surface:
     """
@@ -139,12 +109,6 @@ def fxaa311(
 
     assert isinstance(surf, pg.Surface)
     assert isinstance(threshold, (int, float))
-    assert isinstance(luma, str) and luma in (
-        "rec709",
-        "rec601",
-        "rec2100",
-        "mean",
-    )
     assert threshold > 0
     assert isinstance(f4, bool)
 
@@ -152,26 +116,7 @@ def fxaa311(
         np.float32 if not f4 else np.float64
     )
 
-    if luma == "rec709":
-        gray = (
-            array[..., 0] * 0.2126
-            + array[..., 1] * 0.7152
-            + array[..., 2] * 0.0722
-        )
-    elif luma == "rec601":
-        gray = (
-            array[..., 0] * 0.299
-            + array[..., 1] * 0.587
-            + array[..., 2] * 0.114
-        )
-    elif luma == "rec2100":
-        gray = (
-            array[..., 0] * 0.2627
-            + array[..., 1] * 0.6780
-            + array[..., 2] * 0.0593
-        )
-    else:
-        gray = np.mean(array, axis=2)
+    gray = compute_luma(array, luma)
 
     # Edge detection in 4 directions
     dx = np.abs(np.roll(gray, -1, axis=0) - gray)

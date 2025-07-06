@@ -4,7 +4,8 @@
 
 import numpy as np
 import pygame as pg
-from typing import Union
+from typing import Union, Literal
+from ._common import compute_luma
 
 
 def smaa(
@@ -12,9 +13,11 @@ def smaa(
     threshold: Union[float, int] = 0.1,
     max_dist: int = 16,
     lut_size: int = 32,
+    luma: Literal["rec709", "rec601", "rec2100", "mean"] = "rec709",
     f4: bool = False,
 ) -> pg.Surface:
     """
+    :param luma:
     :param surf:
     :param threshold:
     :param max_dist:
@@ -37,14 +40,10 @@ def smaa(
     )
     h, w = array.shape[:2]
 
-    # Luma (Rec. 709) + Color edge detection
-    luma = (
-        array[..., 0] * 0.2126
-        + array[..., 1] * 0.7152
-        + array[..., 2] * 0.0722
-    )
-    grad_h = np.abs(np.roll(luma, -1, 0) - luma) > threshold
-    grad_v = np.abs(np.roll(luma, -1, 1) - luma) > threshold
+    luminance = compute_luma(array, luma)
+
+    grad_h = np.abs(np.roll(luminance, -1, 0) - luminance) > threshold
+    grad_v = np.abs(np.roll(luminance, -1, 1) - luminance) > threshold
 
     color_h = np.any(
         np.abs(np.roll(array, -1, 0) - array) > threshold, axis=2
@@ -121,7 +120,7 @@ def smaa_low(surf: pg.Surface, f4: bool = False) -> pg.Surface:
     :param f4: bool:
     :return: pygame.Surface:
     """
-    return smaa(surf, 0.2, 4, 16, f4)
+    return smaa(surf, 0.2, 4, 16, "rec709", f4)
 
 
 def smaa_medium(surf: pg.Surface, f4: bool = False) -> pg.Surface:
@@ -130,7 +129,7 @@ def smaa_medium(surf: pg.Surface, f4: bool = False) -> pg.Surface:
     :param f4: bool:
     :return: pygame.Surface:
     """
-    return smaa(surf, 0.1, 8, 32, f4)
+    return smaa(surf, 0.1, 8, 32, "rec709", f4)
 
 
 def smaa_high(surf: pg.Surface, f4: bool = True) -> pg.Surface:
@@ -139,7 +138,7 @@ def smaa_high(surf: pg.Surface, f4: bool = True) -> pg.Surface:
     :param f4: bool:
     :return: pygame.Surface:
     """
-    return smaa(surf, 0.05, 16, 48, f4)
+    return smaa(surf, 0.05, 16, 48, "rec709", f4)
 
 
 def smaa_very_high(surf: pg.Surface, f4: bool = True) -> pg.Surface:
@@ -148,7 +147,7 @@ def smaa_very_high(surf: pg.Surface, f4: bool = True) -> pg.Surface:
     :param f4: bool:
     :return: pygame.Surface:
     """
-    return smaa(surf, 0.03, 24, 64, f4)
+    return smaa(surf, 0.03, 24, 64, "rec709", f4)
 
 
 def smaa_ultra(surf: pg.Surface, f4: bool = True) -> pg.Surface:
@@ -157,7 +156,7 @@ def smaa_ultra(surf: pg.Surface, f4: bool = True) -> pg.Surface:
     :param f4: bool:
     :return: pygame.Surface:
     """
-    return smaa(surf, 0.0125, 32, 256, f4)
+    return smaa(surf, 0.0125, 32, 256, "rec709", f4)
 
 
 # Aliases

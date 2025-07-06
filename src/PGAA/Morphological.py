@@ -5,9 +5,12 @@ Functions for applying various forms of Morphological Anti-Aliasing (MLAA) to Py
 MLAA is a post-processing anti-aliasing technique that was invented by Alexander Reshetov.
 """
 
-import pygame as pg
-import numpy as np
 from typing import Union, Literal
+
+import numpy as np
+import pygame as pg
+
+from ._common import compute_luma
 
 
 def mlaa_low(surf: pg.Surface, f4: bool = False) -> pg.Surface:
@@ -22,7 +25,7 @@ def mlaa_low(surf: pg.Surface, f4: bool = False) -> pg.Surface:
     array = pg.surfarray.array3d(surface=surf).astype(
         np.float32 if not f4 else np.float64
     )
-    gray = np.mean(array, axis=2)
+    gray = compute_luma(array, "mean")
 
     diff_x = np.abs(np.diff(gray, axis=0, append=gray[-1:]))
     diff_y = np.abs(np.diff(gray, axis=1, append=gray[:, -1:]))
@@ -57,7 +60,7 @@ def mlaa_medium(surf: pg.Surface, f4: bool = False) -> pg.Surface:
     array = pg.surfarray.array3d(surface=surf).astype(
         np.float32 if not f4 else np.float64
     )
-    gray = np.mean(array, axis=2)
+    gray = compute_luma(array, "mean")
 
     diff_x = np.abs(np.diff(gray, axis=0, append=gray[-1:]))
     diff_y = np.abs(np.diff(gray, axis=1, append=gray[:, -1:]))
@@ -92,7 +95,7 @@ def mlaa_high(surf: pg.Surface, f4: bool = True) -> pg.Surface:
     array = pg.surfarray.array3d(surface=surf).astype(
         np.float32 if not f4 else np.float64
     )
-    gray = np.mean(array, axis=2)
+    gray = compute_luma(array, luma="rec709")
 
     diff_x = np.abs(np.diff(gray, axis=0, append=gray[-1:]))
     diff_y = np.abs(np.diff(gray, axis=1, append=gray[:, -1:]))
@@ -126,7 +129,7 @@ def mlaa_very_high(surf: pg.Surface, f4: bool = True) -> pg.Surface:
     array = pg.surfarray.array3d(surface=surf).astype(
         np.float32 if not f4 else np.float64
     )
-    gray = np.mean(array, axis=2)
+    gray = compute_luma(array, "rec709")
 
     diff_x = np.abs(np.diff(gray, axis=0, append=gray[-1:]))
     diff_y = np.abs(np.diff(gray, axis=1, append=gray[:, -1:]))
@@ -195,7 +198,12 @@ def mlaa(
 
 
 def mlaa_custom(
-    surf: pg.Surface, threshold: int, kernel: int, blend: float, f4: bool
+    surf: pg.Surface,
+    threshold: int,
+    kernel: int,
+    blend: float,
+    luma: Literal["rec709", "rec601", "rec2100", "mean"],
+    f4: bool,
 ) -> pg.Surface:
     """
     Custom Morphological Anti-Aliasing function for Pygame-CE surfaces.
@@ -217,7 +225,7 @@ def mlaa_custom(
     array = pg.surfarray.array3d(surface=surf).astype(
         np.float32 if not f4 else np.float64
     )
-    gray = np.mean(array, axis=2)
+    gray = compute_luma(array, luma)
 
     diff_x = np.abs(np.diff(gray, axis=0, append=gray[-1:]))
     diff_y = np.abs(np.diff(gray, axis=1, append=gray[:, -1:]))

@@ -7,6 +7,7 @@ It was built atop of Reshetov's MLAA algorithm.
 import pygame as pg
 import numpy as np
 from typing import Union, Literal
+from ._common import compute_luma
 
 assert getattr(pg, "IS_CE", False), (
     "This module is designed to work with Pygame-CE (Pygame Community Edition) only."
@@ -28,6 +29,7 @@ def jimenez_mlaa(
 ) -> pg.Surface:
     """
     Applies Jimenez-MLAA to the given surface and returns a new surface with anti-aliasing applied.
+    :param luma:
     :param surf: pygame.Surface:
     :param threshold: float or int:
     :param max_search: int:
@@ -44,33 +46,16 @@ def jimenez_mlaa(
         np.float32 if not f4 else np.float64
     )
     h, w = array.shape[:2]
-    # Compute accurate luminance (Rec. 709)
-    if luma == "rec709":
-        luminance = (
-            array[..., 0] * 0.2126
-            + array[..., 1] * 0.7152
-            + array[..., 2] * 0.0722
-        )
-    elif luma == "rec601":
-        luminance = (
-            array[..., 0] * 0.299
-            + array[..., 1] * 0.587
-            + array[..., 2] * 0.114
-        )
-    elif luma == "rec2100":
-        luminance = (
-            array[..., 0] * 0.2627
-            + array[..., 1] * 0.6780
-            + array[..., 2] * 0.0593
-        )
-    else:
-        luminance = np.mean(array, axis=2)
+
+    luminance = compute_luma(array, luma)
 
     # Edge Detection booleans
     e_h = np.abs(np.roll(luminance, -1, axis=0) - luminance) > threshold
     e_v = np.abs(np.roll(luminance, -1, axis=1) - luminance) > threshold
     e_d1 = (
-        np.abs(np.roll(np.roll(luminance, -1, axis=0), -1, axis=1) - luminance)
+        np.abs(
+            np.roll(np.roll(luminance, -1, axis=0), -1, axis=1) - luminance
+        )
         > threshold
     )
     e_d2 = (
@@ -167,7 +152,7 @@ def jimenez_mlaa_low(
     :param f4: bool:
     :return: pygame.Surface:
     """
-    return jimenez_mlaa(surf, 30, 4, 'rec709', f4)
+    return jimenez_mlaa(surf, 30, 4, "rec709", f4)
 
 
 def jimenez_mlaa_medium(surf, f4: bool = False) -> pg.Surface:
@@ -177,7 +162,7 @@ def jimenez_mlaa_medium(surf, f4: bool = False) -> pg.Surface:
     :param f4: bool:
     :return: pygame.Surface:
     """
-    return jimenez_mlaa(surf, 20, 8, 'rec709',f4)
+    return jimenez_mlaa(surf, 20, 8, "rec709", f4)
 
 
 def jimenez_mlaa_high(
@@ -190,7 +175,7 @@ def jimenez_mlaa_high(
     :param f4: bool:
     :return: pygame.Surface:
     """
-    return jimenez_mlaa(surf, 10, 16, 'rec709', f4)
+    return jimenez_mlaa(surf, 10, 16, "rec709", f4)
 
 
 def jimenez_mlaa_very_high(
@@ -203,7 +188,7 @@ def jimenez_mlaa_very_high(
     :param f4: bool:
     :return: pygame.Surface:
     """
-    return jimenez_mlaa(surf, 5, 32, 'rec709', f4)
+    return jimenez_mlaa(surf, 5, 32, "rec709", f4)
 
 
 # Aliases
