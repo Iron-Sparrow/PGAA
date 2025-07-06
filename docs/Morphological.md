@@ -20,6 +20,7 @@ from PGAA import Morphological as MLAA
 
 > [!NOTE]
 > Added in **1.0.0**.
+> The kwarg `luma` was added in **3.1.0**.
 
 ### MLAA_MEDIUM
 
@@ -27,6 +28,7 @@ from PGAA import Morphological as MLAA
 
 > [!NOTE]
 > Added in **1.0.0**.
+> The kwarg `luma` was added in **3.1.0**.
 
 ### MLAA_HIGH
 
@@ -34,6 +36,7 @@ from PGAA import Morphological as MLAA
 
 > [!NOTE]
 > Added in **1.0.0**.
+> The kwarg `luma` was added in **3.1.0**.
 
 ### MLAA_VERY_HIGH
 
@@ -41,6 +44,7 @@ from PGAA import Morphological as MLAA
 
 > [!NOTE]
 > Added in **1.0.0**.
+> The kwarg `luma` was added in **3.1.0**.
 
 ### MLAA
 
@@ -48,6 +52,7 @@ from PGAA import Morphological as MLAA
 
 > [!NOTE]
 > Added in **1.0.0**.
+> The kwarg `luma` was added in **3.1.0**.
 
 ### MLAA_CUSTOM
 
@@ -55,6 +60,7 @@ from PGAA import Morphological as MLAA
 
 > [!NOTE]
 > Added in **1.0.0**.
+> The kwarg `luma` was added in **3.1.0**.
 
 > [!WARNING]
 > Changed from `custom_mlaa` to `mlaa_custom` in **1.0.3**.
