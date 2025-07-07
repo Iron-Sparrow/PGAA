@@ -55,7 +55,7 @@ With `fxaa_hq`, the default `threshold` value is `10` *(the lower the better qua
 
 With `fxaa311`, the default `threshold` value is `0.05` *(the lower the better quality, with too low causing blurring)*, the default `diagonal_blur` value is `True` *(diagonal_blur cause better results on jagged_edges especially diagonals with the cost of a slight performance decrease)*, the default `luma` value is `'rec2100'` *(It determines how the grayscale is calculated)*, the default `f4` value is `True` *(Increases floating point precision at the cost of higher memory usage)*.
 
-Unlike the other FXAA functions, `fxaa311` is based on the more recent verison of FXAA — FXAA 3.11 — and thus has more advanced features, like adaptive thresholding and overall better quality.
+Unlike the other FXAA functions, `fxaa311` is based on the more recent version of FXAA — FXAA 3.11 — and thus has more advanced features, like adaptive thresholding and overall better quality.
 
 > [!NOTE]
 > Added in **2.0.1**.\
