@@ -4,9 +4,11 @@ Jimenez's MLAA is the precursor to the Subpixel Morphological Antialiasing (SMAA
 It was built atop of Reshetov's MLAA algorithm.
 """
 
-import pygame as pg
-import numpy as np
 from typing import Union, Literal
+
+import numpy as np
+import pygame as pg
+
 from ._common import compute_luma
 
 assert getattr(pg, "IS_CE", False), (

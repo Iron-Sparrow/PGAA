@@ -1,8 +1,8 @@
 # encoding: utf-8
-import numpy as np
 from typing import Literal
-import pygame as pg
 
+import numpy as np
+import pygame as pg
 
 assert getattr(pg, "IS_CE", False), (
     "This module is designed to work with Pygame-CE (Pygame Community Edition) only."

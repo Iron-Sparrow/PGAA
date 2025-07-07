@@ -2,9 +2,11 @@
 
 """Scharr Normal Filter Anti-Aliasing for Pygame-CE surfaces."""
 
-import pygame as pg
-import numpy as np
 from typing import Literal
+
+import numpy as np
+import pygame as pg
+
 from ._common import compute_luma
 
 

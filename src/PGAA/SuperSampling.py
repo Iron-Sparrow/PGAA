@@ -9,8 +9,9 @@ It requires Pygame-CE 2.2.1 or later for it to function correctly. It only works
 Currently, SSAA0.5x, SSAA2x, and SSAA4x, SSAA8x, SSAA32x are implemented and customisable versions are possible through the `ssaa` function.
 """
 
-import pygame as pg
 from typing import Union
+
+import pygame as pg
 
 assert getattr(pg, "IS_CE", False), (
     "This module is designed to work with Pygame-CE (Pygame Community Edition) only."

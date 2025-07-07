@@ -5,9 +5,11 @@ Various functions for applying Fast Approximate Anti-Aliasing (FXAA) to Pygame-C
 Due to the nature of FXAA, results may be perceived as blurry or soft.
 """
 
-import pygame as pg
-import numpy as np
 from typing import Union, Literal
+
+import numpy as np
+import pygame as pg
+
 from ._common import compute_luma
 
 assert getattr(pg, "IS_CE", False), (

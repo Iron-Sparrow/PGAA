@@ -2,9 +2,11 @@
 
 """SMAA"""
 
+from typing import Union, Literal
+
 import numpy as np
 import pygame as pg
-from typing import Union, Literal
+
 from ._common import compute_luma
 
 
