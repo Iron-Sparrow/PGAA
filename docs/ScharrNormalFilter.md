@@ -57,26 +57,3 @@ With `scharr_nfaa_high`, the default `luma` value is `'rec2100'` (options includ
 ## Aliases
 
 PGAA provides aliases for the ScharrNFAA functions to make them easier to use. The aliases are as follows:
-
-> [!NOTE]
-> Added in **3.0.0**:
-
-+ `scharr_nfaa`:
-  + `scharr_default`
-  + `nfaa`
-  + `nfaa_default`
-+ `scharr_nfaa_low`:
-  + `scharr_low`
-  + `scharr_lq`
-  + `nfaa_low`
-  + `nfaa_lq`
-+ `scharr_nfaa_medium`:
-  + `scharr_medium`
-  + `scharr_med`
-  + `nfaa_medium`
-  + `nfaa_med`
-+ `scharr_nfaa_high`:
-  + `scharr_high`
-  + `scharr_hq`
-  + `nfaa_high`
-  + `nfaa_hq`

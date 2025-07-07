@@ -80,24 +80,3 @@ PGAA provides aliases for the SMAA functions to make them easier to use. The ali
 
 > [!NOTE]
 > Added in **3.0.0**:
-
-+ `smaa`:
-  + `smaa_default`
-+ `smaa_low`:
-  + `smaa_lq`
-  + `smaa_low_quality`
-+ `smaa_medium`:
-  + `smaa_med`
-  + `smaa_medium_quality`
-  + `smaa_mq`
-+ `smaa_high`:
-  + `smaa_hq`
-  + `smaa_high_quality`
-+ `smaa_ultra`:
-  + `smaa_uhq`
-  + `smaa_ultra_high`
-  + `smaa_ultra_quality`
-  + `smaa_uq`
-+ `smaa_custom`:
-  + `smaa_custom_quality`
-  + `custom_smaa`
