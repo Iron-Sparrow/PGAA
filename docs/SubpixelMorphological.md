@@ -78,5 +78,4 @@ With `smaa_custom`, you can fine-tune the SMAA algorithm to achieve the desired 
 
 PGAA provides aliases for the SMAA functions to make them easier to use. The aliases are as follows:
 
-> [!NOTE]
-> Added in **3.0.0**:
+ `...`

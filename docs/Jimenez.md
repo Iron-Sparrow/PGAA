@@ -60,6 +60,7 @@ With `jimenez_mlaa`, the default `quality` value is `'medium'` (options include 
 
 PGAA provides aliases for the Jimenez's MLAA functions to make them easier to use. The aliases are as follows:
 
+ `...`
 
 ## Link to SMAA
 
