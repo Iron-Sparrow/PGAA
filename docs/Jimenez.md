@@ -22,11 +22,61 @@ from PGAA import Jimenez as Jimenez_MLAA
 
 ## Functions
 
-`...`
+### jimenez_mlaa
+
+`jimenez_mlaa(surf, quality, luma)` where `surf` is a Pygame-CE surface, `quality` is a string representing the quality level, and `luma` is a string representing the luma calculation method. Returns a Pygame-CE surface with Jimenez's MLAA applied to it.
+
+With `jimenez_mlaa`, the default `quality` value is `'medium'` (options include 'low', 'medium', 'high'), and the default `luma` value is `'rec709'` (options include 'rec709', 'rec601', 'rec2100', 'mean').
+
+> [!NOTE]
+> Added in **3.0.0**.
+> The kwarg `luma` was added in **3.1.0**.
+
+### jimenez_mlaa_low
+
+`jimenez_mlaa_low(surf, luma)` where `surf` is a Pygame-CE surface and `luma` is a string. Returns a Pygame-CE surface with Jimenez's MLAA applied at low quality.
+
+> [!NOTE]
+> Added in **3.0.0**.
+> The kwarg `luma` was added in **3.1.0**.
+
+### jimenez_mlaa_medium
+
+`jimenez_mlaa_medium(surf, luma)` where `surf` is a Pygame-CE surface and `luma` is a string. Returns a Pygame-CE surface with Jimenez's MLAA applied at medium quality.
+
+> [!NOTE]
+> Added in **3.0.0**.
+> The kwarg `luma` was added in **3.1.0**.
+
+### jimenez_mlaa_high
+
+`jimenez_mlaa_high(surf, luma)` where `surf` is a Pygame-CE surface and `luma` is a string. Returns a Pygame-CE surface with Jimenez's MLAA applied at high quality.
+
+> [!NOTE]
+> Added in **3.0.0**.
+> The kwarg `luma` was added in **3.1.0**.
 
 ## Aliases
 
-`...`
+PGAA provides aliases for the Jimenez's MLAA functions to make them easier to use. The aliases are as follows:
+
+> [!NOTE]
+> Added in **3.0.0**:
+
++ `jimenez_mlaa`:
+  + `jimenez_default`
++ `jimenez_mlaa_low`:
+  + `jimenez_low`
+  + `jimenez_lq`
+  + `jimenez_mlaa_lq`
++ `jimenez_mlaa_medium`:
+  + `jimenez_medium`
+  + `jimenez_med`
+  + `jimenez_mlaa_med`
++ `jimenez_mlaa_high`:
+  + `jimenez_high`
+  + `jimenez_hq`
+  + `jimenez_mlaa_hq`
 
 ## Link to SMAA
 

@@ -73,7 +73,7 @@ Thanks to the optimised algorith found in [pygame-ce](https://pyga.me/docs/ref/t
 
 ### SSAA2x LQ
 
-`...`
+`ssaa2_lq(surf)` where `surf` is a Pygame-CE surface and where it returns a new surface with anti-aliasing applied. It uses the faster but less accurate scaling algorithms for both upscaling and downscaling.
 
 > [!NOTE]
 > Added in **0.2.2**.
@@ -83,7 +83,7 @@ Thanks to the optimised algorith found in [pygame-ce](https://pyga.me/docs/ref/t
 
 ### SSAA4x
 
-`...`
+`ssaa4(surf)` where `surf` is a Pygame-CE surface and where it returns a new surface with anti-aliasing applied. This function upscales the image to 4x its original size and then downscales it back, using the standard scaling algorithms.
 
 > [!NOTE]
 > Added in **0.1.0**.
@@ -93,7 +93,7 @@ Thanks to the optimised algorith found in [pygame-ce](https://pyga.me/docs/ref/t
 
 ### SSAA4x HQ
 
-`...`
+`ssaa4_hq(surf)` where `surf` is a Pygame-CE surface and where it returns a new surface with high-quality anti-aliasing applied. It uses the smoother scaling algorithms for both upscaling and downscaling, resulting in better image quality but at a higher performance cost.
 
 > [!NOTE]
 > Added in **0.1.0**.
@@ -103,7 +103,7 @@ Thanks to the optimised algorith found in [pygame-ce](https://pyga.me/docs/ref/t
 
 ### SSAA8x
 
-`...`
+`ssaa8(surf)` where `surf` is a Pygame-CE surface and where it returns a new surface with anti-aliasing applied. This function upscales the image to 8x its original size and then downscales it back, using the standard scaling algorithms.
 
 > [!NOTE]
 > Added in **0.2.1**.
@@ -113,7 +113,7 @@ Thanks to the optimised algorith found in [pygame-ce](https://pyga.me/docs/ref/t
 
 ### SSAA8x HQ
 
-`...`
+`ssaa8_hq(surf)` where `surf` is a Pygame-CE surface and where it returns a new surface with high-quality anti-aliasing applied. It upscales the image to 8x its original size using high-quality algorithms, then downscales it back with smooth scaling, resulting in very high image quality at a significant performance cost.
 
 > [!NOTE]
 > Added in **0.2.1**.
@@ -133,21 +133,22 @@ Thanks to the optimised algorith found in [pygame-ce](https://pyga.me/docs/ref/t
 
 ### SSAA
 
-`...`
+`ssaa(surf, scale_factor, smooth)` where `surf` is a Pygame-CE surface, `scale_factor` is an integer representing the scaling factor (default is 2), and `smooth` is a boolean indicating whether to use smooth scaling (default is True). Returns a Pygame-CE surface with SSAA applied to it.
 
 > [!NOTE]
 > Added in **0.3.1**.
 
 ### SSAA LQ
 
-`...`
+`ssaa_lq(surf, scale_factor)` where `surf` is a Pygame-CE surface and `scale_factor` is an integer representing the scaling factor (default is 2). Returns a Pygame-CE surface with low-quality SSAA applied to it.
 
 > [!NOTE]
 > Added in **0.3.1**.
 
 ### SSAA HQ
 
-`...`
+`ssaa_hq(surf, scale_factor)` where `surf` is a Pygame-CE surface and `scale_factor` is an integer representing the scaling factor (default is 2). Returns a Pygame-CE surface with high-quality SSAA applied to it. This uses smooth scaling for both upscaling and downscaling.
+
 > [!NOTE]
 > Added in **0.3.1**.
 
