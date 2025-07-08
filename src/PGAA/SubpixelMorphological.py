@@ -70,7 +70,7 @@ def smaa(
 
     dist_h = compute_dist(mask_h)
     dist_v = compute_dist(mask_v)
-    dist_d1 = compute_dist((mask_h & mask_v))
+    dist_d1 = compute_dist((mask_h & mask_v)) # this causes an error "TypeError: ufunc 'bitwise_and' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''"
     dist_d2 = dist_d1.copy()
 
     # LUT creation (H,V,D1,D2 weights)
