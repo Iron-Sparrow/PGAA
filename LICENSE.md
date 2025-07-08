@@ -62,4 +62,4 @@ By filling in the contact information, the author agrees to be contacted through
 
 
 {If posted on Github (github.com) it is possible to use the ISSUES tab of the repository (if available).}
-    - Issues: {[https://github.com/Iron-Sparrow/IronSparrowLicense/issues](https://github.com/Iron-Sparrow/PGAA/issues)}
+    - Issues: {https://github.com/Iron-Sparrow/PGAA/issues}
