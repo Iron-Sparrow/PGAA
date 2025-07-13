@@ -1,0 +1,4 @@
+# encoding: utf-8
+
+if __debug__:
+    print("Imported PGAA, instead of a PGAA module.")
