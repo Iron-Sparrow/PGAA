@@ -6,6 +6,9 @@ SMAA, or Subpixel Morphological Anti-Aliasing, is an advanced anti-aliasing tech
 
 SMAA is widely considered one of the most effective post-processing anti-aliasing techniques, offering a good balance between quality and performance. It's particularly effective at handling both geometric aliasing and shader aliasing.
 
+> [!IMPORTANT]
+> The implementation of SMAA in this context is not fully up to specs with SMAA v2.8. Results may vary.
+
 ## Usage in code
 
 ```python

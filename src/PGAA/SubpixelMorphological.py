@@ -70,9 +70,7 @@ def smaa(
 
     dist_h = compute_dist(mask_h)
     dist_v = compute_dist(mask_v)
-    dist_d1 = compute_dist(
-        (mask_h.astype(bool) & mask_v.astype(bool))
-    )
+    dist_d1 = compute_dist((mask_h.astype(bool) & mask_v.astype(bool)))
     dist_d2 = dist_d1.copy()
 
     # LUT creation (H,V,D1,D2 weights)
